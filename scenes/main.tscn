@@ -1,8 +1,100 @@
-[gd_scene load_steps=2 format=3 uid="uid://ggxq6rt4hf8n"]
+[gd_scene load_steps=14 format=3 uid="uid://ggxq6rt4hf8n"]
 
 [ext_resource type="Texture2D" uid="uid://dbnm86nyp5yl6" path="res://sprites/temp_map.png" id="1_qc1po"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="2_epvge"]
+[ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://sprites/Midas_Lennox_walking.png" id="2_sveuq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vixo0"]
+size = Vector2(20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnn4u"]
+atlas = ExtResource("2_sveuq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qmaw"]
+atlas = ExtResource("2_sveuq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sut30"]
+atlas = ExtResource("2_sveuq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqxri"]
+atlas = ExtResource("2_sveuq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn64p"]
+atlas = ExtResource("2_sveuq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfp28"]
+atlas = ExtResource("2_sveuq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_15are"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnn4u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qmaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sut30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqxri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fn64p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfp28")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq05i"]
+size = Vector2(62, 182)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67d3b"]
+size = Vector2(59, 61)
 
 [node name="main" type="Node2D"]
 
 [node name="bg" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_qc1po")
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(10, 20)
+script = ExtResource("2_epvge")
+
+[node name="col" type="CollisionShape2D" parent="player"]
+shape = SubResource("RectangleShape2D_vixo0")
+
+[node name="midas_lennox" type="AnimatedSprite2D" parent="player"]
+sprite_frames = SubResource("SpriteFrames_15are")
+animation = &"walk"
+frame_progress = 0.101601
+
+[node name="camera" type="Camera2D" parent="player"]
+position = Vector2(-10, -20)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-86, -99)
+shape = SubResource("RectangleShape2D_nq05i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-223.5, -159.5)
+shape = SubResource("RectangleShape2D_67d3b")
