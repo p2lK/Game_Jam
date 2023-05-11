@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4ga8d8olagui"
-path="res://.godot/imported/Midas_Lennox_walking.png-99c2e3da00bb2f73f7d040274e2a043a.ctex"
+path="res://.godot/imported/Midas_Lennox_walking.png-78b47087cdb40e7b2b844b3b050acbeb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Midas_Lennox_walking.png"
-dest_files=["res://.godot/imported/Midas_Lennox_walking.png-99c2e3da00bb2f73f7d040274e2a043a.ctex"]
+source_file="res://sprites/Midas_Lennox_walking.png"
+dest_files=["res://.godot/imported/Midas_Lennox_walking.png-78b47087cdb40e7b2b844b3b050acbeb.ctex"]
 
 [params]
 
