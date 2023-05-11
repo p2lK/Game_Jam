@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=17 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://sprites/backgrounds/corridor1.png" id="1_8sc0c"]
+[ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="2_epvge"]
 [ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://sprites/backgrounds/corridor2.png" id="2_xkyol"]
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
@@ -74,50 +75,58 @@ size = Vector2(85.5, 71)
 metadata/_edit_horizontal_guides_ = [30.0]
 metadata/_edit_vertical_guides_ = [260.0]
 
-[node name="backgrounds" type="Node2D" parent="."]
+[node name="gameplay" type="Node2D" parent="."]
+script = ExtResource("1_kjmec")
 
-[node name="Corridor1" type="Sprite2D" parent="backgrounds"]
+[node name="backgrounds" type="Node2D" parent="gameplay"]
+
+[node name="Corridor1" type="Sprite2D" parent="gameplay/backgrounds"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_8sc0c")
 
-[node name="Corridor2" type="Sprite2D" parent="backgrounds"]
+[node name="Corridor2" type="Sprite2D" parent="gameplay/backgrounds"]
 position = Vector2(400, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_xkyol")
 
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="gameplay"]
 script = ExtResource("2_epvge")
 
-[node name="col" type="CollisionShape2D" parent="player"]
+[node name="col" type="CollisionShape2D" parent="gameplay/player"]
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_vixo0")
 
-[node name="midas_lennox" type="AnimatedSprite2D" parent="player"]
+[node name="midas_lennox" type="AnimatedSprite2D" parent="gameplay/player"]
 sprite_frames = SubResource("SpriteFrames_15are")
 animation = &"idle"
 
-[node name="camera" type="Camera2D" parent="player"]
+[node name="camera" type="Camera2D" parent="gameplay/player"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="gameplay"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
 position = Vector2(-166, 0)
 shape = SubResource("RectangleShape2D_nq05i")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
 position = Vector2(117.25, -54.5)
 shape = SubResource("RectangleShape2D_67d3b")
 
-[node name="teleporter" parent="." instance=ExtResource("5_nhd1s")]
+[node name="teleporter" parent="gameplay" instance=ExtResource("5_nhd1s")]
 position = Vector2(157, 30.5)
 scale = Vector2(0.1875, 0.90625)
 target_position = Vector2(260, 30)
 
-[node name="teleporter2" parent="." instance=ExtResource("5_nhd1s")]
+[node name="teleporter2" parent="gameplay" instance=ExtResource("5_nhd1s")]
 position = Vector2(243, 30.5)
 scale = Vector2(0.1875, 0.90625)
 target_position = Vector2(120, 30)
 
-[node name="teleporter3" parent="." instance=ExtResource("5_nhd1s")]
+[node name="teleporter3" parent="gameplay" instance=ExtResource("5_nhd1s")]
 position = Vector2(115, -14.5)
 scale = Vector2(0.625, 0.28125)
+target_position = Vector2(10, 0)
+
+[connection signal="teleport_player_to" from="gameplay/teleporter" to="gameplay" method="_on_teleporter_teleport_player_to"]
+[connection signal="teleport_player_to" from="gameplay/teleporter2" to="gameplay" method="_on_teleporter_2_teleport_player_to"]
+[connection signal="teleport_player_to" from="gameplay/teleporter3" to="gameplay" method="_on_teleporter_3_teleport_player_to"]

@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var sprite = $midas_lennox
 @onready var bg = get_parent().find_child('backgrounds')
 
-var speed = 200.0
+@export var speed = 200.0
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
