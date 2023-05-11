@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite = $midas_lennox
+@onready var bg = get_parent().find_child('backgrounds')
 
 var speed = 200.0
 
@@ -27,9 +28,3 @@ func _physics_process(delta):
 	velocity = dir * speed
 	
 	move_and_slide()
-
-func _on_right_exit_corridor_1_body_entered(body):
-	if body == self:
-		print('hallo')
-		
-		position = Vector2(260, 30)

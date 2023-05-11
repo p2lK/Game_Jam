@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=16 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="2_epvge"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vixo0"]
-size = Vector2(20, 30)
+size = Vector2(20, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wnn4u"]
 atlas = ExtResource("3_amvyg")
@@ -65,13 +65,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nq05i"]
-size = Vector2(62, 182)
+size = Vector2(12, 182)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67d3b"]
-size = Vector2(59, 61)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_af0t5"]
-size = Vector2(6, 29)
+size = Vector2(85.5, 71)
 
 [node name="main" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [30.0]
@@ -92,6 +89,7 @@ texture = ExtResource("2_xkyol")
 script = ExtResource("2_epvge")
 
 [node name="col" type="CollisionShape2D" parent="player"]
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_vixo0")
 
 [node name="midas_lennox" type="AnimatedSprite2D" parent="player"]
@@ -101,27 +99,25 @@ animation = &"idle"
 [node name="camera" type="Camera2D" parent="player"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-302, -224)
+position = Vector2(-166, 0)
 shape = SubResource("RectangleShape2D_nq05i")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-183, -192)
+position = Vector2(117.25, -54.5)
 shape = SubResource("RectangleShape2D_67d3b")
 
-[node name="right_exit_corridor_1" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="right_exit_corridor_1"]
-position = Vector2(157, 30.5)
-shape = SubResource("RectangleShape2D_af0t5")
-
 [node name="teleporter" parent="." instance=ExtResource("5_nhd1s")]
-position = Vector2(97, 85)
-scale = Vector2(2, 1)
+position = Vector2(157, 30.5)
+scale = Vector2(0.1875, 0.90625)
+target_position = Vector2(260, 30)
 
 [node name="teleporter2" parent="." instance=ExtResource("5_nhd1s")]
-position = Vector2(3, 84)
+position = Vector2(243, 30.5)
+scale = Vector2(0.1875, 0.90625)
+target_position = Vector2(120, 30)
 
-[connection signal="body_entered" from="right_exit_corridor_1" to="player" method="_on_right_exit_corridor_1_body_entered"]
+[node name="teleporter3" parent="." instance=ExtResource("5_nhd1s")]
+position = Vector2(115, -14.5)
+scale = Vector2(0.625, 0.28125)
