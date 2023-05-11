@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=17 format=3 uid="uid://m46lfebhisxf"]
 
-[ext_resource type="Texture2D" uid="uid://dbnm86nyp5yl6" path="res://sprites/temp_map.png" id="1_qc1po"]
+[ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="2_epvge"]
+[ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://sprites/backgrounds/corridor2.png" id="2_xkyol"]
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
+[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vixo0"]
 size = Vector2(20, 30)
@@ -68,14 +70,25 @@ size = Vector2(62, 182)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67d3b"]
 size = Vector2(59, 61)
 
-[node name="main" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_af0t5"]
+size = Vector2(6, 29)
 
-[node name="bg" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_qc1po")
+[node name="main" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [30.0]
+metadata/_edit_vertical_guides_ = [260.0]
+
+[node name="backgrounds" type="Node2D" parent="."]
+
+[node name="Corridor1" type="Sprite2D" parent="backgrounds"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_8sc0c")
+
+[node name="Corridor2" type="Sprite2D" parent="backgrounds"]
+position = Vector2(400, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_xkyol")
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(10, 20)
 script = ExtResource("2_epvge")
 
 [node name="col" type="CollisionShape2D" parent="player"]
@@ -83,18 +96,32 @@ shape = SubResource("RectangleShape2D_vixo0")
 
 [node name="midas_lennox" type="AnimatedSprite2D" parent="player"]
 sprite_frames = SubResource("SpriteFrames_15are")
-animation = &"walk"
-frame_progress = 0.101601
+animation = &"idle"
 
 [node name="camera" type="Camera2D" parent="player"]
-position = Vector2(-10, -20)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-86, -99)
+position = Vector2(-302, -224)
 shape = SubResource("RectangleShape2D_nq05i")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-223.5, -159.5)
+position = Vector2(-183, -192)
 shape = SubResource("RectangleShape2D_67d3b")
+
+[node name="right_exit_corridor_1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_exit_corridor_1"]
+position = Vector2(157, 30.5)
+shape = SubResource("RectangleShape2D_af0t5")
+
+[node name="teleporter" parent="." instance=ExtResource("5_nhd1s")]
+position = Vector2(97, 85)
+scale = Vector2(2, 1)
+
+[node name="teleporter2" parent="." instance=ExtResource("5_nhd1s")]
+position = Vector2(3, 84)
+
+[connection signal="body_entered" from="right_exit_corridor_1" to="player" method="_on_right_exit_corridor_1_body_entered"]

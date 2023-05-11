@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var sprite = $midas_lennox
 
-var speed = 300.0
+var speed = 200.0
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -22,7 +22,14 @@ func _physics_process(delta):
 	else:
 		sprite.play('walk')
 	
+	dir = dir.normalized()
 	
 	velocity = dir * speed
 	
 	move_and_slide()
+
+func _on_right_exit_corridor_1_body_entered(body):
+	if body == self:
+		print('hallo')
+		
+		position = Vector2(260, 30)
