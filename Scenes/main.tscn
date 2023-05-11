@@ -1,34 +1,34 @@
-[gd_scene load_steps=14 format=3 uid="uid://ggxq6rt4hf8n"]
+[gd_scene load_steps=14 format=3 uid="uid://cb3ruddva231w"]
 
 [ext_resource type="Texture2D" uid="uid://dbnm86nyp5yl6" path="res://sprites/temp_map.png" id="1_qc1po"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="2_epvge"]
-[ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://sprites/Midas_Lennox_walking.png" id="2_sveuq"]
+[ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vixo0"]
 size = Vector2(20, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wnn4u"]
-atlas = ExtResource("2_sveuq")
+atlas = ExtResource("3_amvyg")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qmaw"]
-atlas = ExtResource("2_sveuq")
+atlas = ExtResource("3_amvyg")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sut30"]
-atlas = ExtResource("2_sveuq")
+atlas = ExtResource("3_amvyg")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqxri"]
-atlas = ExtResource("2_sveuq")
+atlas = ExtResource("3_amvyg")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fn64p"]
-atlas = ExtResource("2_sveuq")
+atlas = ExtResource("3_amvyg")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfp28"]
-atlas = ExtResource("2_sveuq")
+atlas = ExtResource("3_amvyg")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_15are"]
