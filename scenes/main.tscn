@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://Sprites/backgrounds/corridor2.png" id="2_xkyol"]
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
 [ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="5_n0fax"]
-[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://Scenes/teleporter.tscn" id="5_nhd1s"]
+[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
 [ext_resource type="Texture2D" uid="uid://cg67np1obqd1a" path="res://Sprites/backgrounds/patient_room1.jpg" id="6_sey07"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
 [ext_resource type="Texture2D" uid="uid://c2e1o234gwd8e" path="res://Sprites/backgrounds/patient_room2.jpg" id="7_xxk1d"]
@@ -15,16 +15,16 @@
 [ext_resource type="Texture2D" uid="uid://n8liwh0rk7tb" path="res://Sprites/backgrounds/bureau.jpg" id="9_44tbe"]
 [ext_resource type="Texture2D" uid="uid://byq257pplvcan" path="res://Sprites/backgrounds/bathroom.jpg" id="10_b62j2"]
 [ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
-[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="11_33yrk"]
+[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://scenes/collectable_item.tscn" id="11_33yrk"]
 [ext_resource type="Script" path="res://scenes/task_display.gd" id="14_cu32g"]
 [ext_resource type="Texture2D" uid="uid://23tna5akds1g" path="res://Sprites/items/white_square_32x32.png" id="14_xk0md"]
 [ext_resource type="Script" path="res://scenes/orange_hair.gd" id="15_mdatf"]
-[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://Scenes/player_detector.tscn" id="16_4sr81"]
+[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://scenes/player_detector.tscn" id="16_4sr81"]
 [ext_resource type="Texture2D" uid="uid://cfkq7hi13tgb8" path="res://Sprites/characters/Angelina_Slade.png" id="16_mfdkm"]
 [ext_resource type="FontFile" uid="uid://b5kn6o17w7igv" path="res://assets/PixelGuzel.ttf" id="17_uerat"]
 [ext_resource type="Texture2D" uid="uid://dbu8sopel8mnj" path="res://Sprites/items/Clipboard.png" id="18_pk5wq"]
 [ext_resource type="Texture2D" uid="uid://l1rqyp3epav7" path="res://Sprites/backgrounds/wooden_shack.jpg" id="21_0oku6"]
-[ext_resource type="PackedScene" uid="uid://d31g1mji5lba4" path="res://Scenes/christian.tscn" id="21_e872j"]
+[ext_resource type="PackedScene" uid="uid://d31g1mji5lba4" path="res://scenes/christian.tscn" id="21_e872j"]
 [ext_resource type="Texture2D" uid="uid://du7xwgji53ma4" path="res://Sprites/backgrounds/treatment_room.jpg" id="22_3mf1q"]
 [ext_resource type="Texture2D" uid="uid://ewnxxhrilyf1" path="res://Sprites/items/Apple-3.png" id="22_je1nu"]
 [ext_resource type="Texture2D" uid="uid://chj6g061abrji" path="res://Sprites/backgrounds/Cafeteria.png" id="27_j08sv"]
@@ -886,6 +886,22 @@ scale = Vector2(0.34375, 0.28125)
 
 [node name="christian" parent="gameplay/items" instance=ExtResource("21_e872j")]
 position = Vector2(-167, -124)
+
+[node name="christian2" parent="gameplay/items" instance=ExtResource("21_e872j")]
+position = Vector2(324, -50)
+animation = &"cowboy"
+
+[node name="christian3" parent="gameplay/items" instance=ExtResource("21_e872j")]
+position = Vector2(718, -407)
+animation = &"viking"
+
+[node name="christian4" parent="gameplay/items" instance=ExtResource("21_e872j")]
+position = Vector2(-233, -528)
+animation = &"mermaid"
+
+[node name="christian5" parent="gameplay/items" instance=ExtResource("21_e872j")]
+position = Vector2(823, 357)
+animation = &"original"
 
 [node name="Characters" type="Node2D" parent="gameplay"]
 

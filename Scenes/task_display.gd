@@ -67,7 +67,7 @@ func change_text():
 			text += '- Sammel in der Cafeteria einen Apfel ein\n'
 			text += '- Bring Mr. MacClellan einen Apfel\n'
 		
-		text += '- Vervollständige dein Protokol in diesem Raum\n\n'
+		text += '- Vervollständige hier dein Protokoll\n\n'
 		
 		text += 'Tutorial: WASD zum Bewegen und E/Space zum interagieren.'
 		

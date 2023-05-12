@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var task_display = $task_display
 @onready var black_screen = $black_screen
 
-@export var speed = 200.0
+@export var speed = 120.0
 
 var can_move = true
 
