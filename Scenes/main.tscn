@@ -1,15 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=20 format=3 uid="uid://m46lfebhisxf"]
 
-[ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://sprites/backgrounds/corridor1.png" id="1_8sc0c"]
+[ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="2_epvge"]
-[ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://sprites/backgrounds/corridor2.png" id="2_xkyol"]
-[ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
-[ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://sprites/backgrounds/garden.png" id="4_a0tpe"]
-[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
+[ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://Sprites/backgrounds/corridor2.png" id="2_xkyol"]
+[ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
+[ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="4_a0tpe"]
+[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://Scenes/teleporter.tscn" id="5_nhd1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vixo0"]
-size = Vector2(20, 16)
+size = Vector2(13, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wnn4u"]
 atlas = ExtResource("3_amvyg")
@@ -66,11 +66,17 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq05i"]
-size = Vector2(12, 182)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gy7jd"]
+b = Vector2(0, 179)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67d3b"]
-size = Vector2(85.5, 71)
+size = Vector2(85.5, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rr88a"]
+size = Vector2(84, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86awa"]
+size = Vector2(85, 58)
 
 [node name="main" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [30.0]
@@ -99,7 +105,7 @@ texture = ExtResource("4_a0tpe")
 script = ExtResource("2_epvge")
 
 [node name="col" type="CollisionShape2D" parent="gameplay/player"]
-position = Vector2(0, 7)
+position = Vector2(0.5, 7)
 shape = SubResource("RectangleShape2D_vixo0")
 
 [node name="midas_lennox" type="AnimatedSprite2D" parent="gameplay/player"]
@@ -108,15 +114,27 @@ animation = &"idle"
 
 [node name="camera" type="Camera2D" parent="gameplay/player"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="gameplay"]
+[node name="Corridor1" type="StaticBody2D" parent="gameplay"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
-position = Vector2(-166, 0)
-shape = SubResource("RectangleShape2D_nq05i")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/Corridor1"]
+position = Vector2(-159, -89)
+shape = SubResource("SegmentShape2D_gy7jd")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
-position = Vector2(117.25, -54.5)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/Corridor1"]
+position = Vector2(117.25, -61)
 shape = SubResource("RectangleShape2D_67d3b")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/Corridor1"]
+position = Vector2(-117, -60.5)
+shape = SubResource("RectangleShape2D_rr88a")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="gameplay/Corridor1"]
+position = Vector2(0.5, -61)
+shape = SubResource("RectangleShape2D_86awa")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="gameplay/Corridor1"]
+position = Vector2(160, -90)
+shape = SubResource("SegmentShape2D_gy7jd")
 
 [node name="teleporters" type="Node2D" parent="gameplay"]
 
