@@ -7,15 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://Sprites/backgrounds/corridor2.png" id="2_xkyol"]
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
 [ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="5_n0fax"]
-[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
+[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://Scenes/teleporter.tscn" id="5_nhd1s"]
 [ext_resource type="Texture2D" uid="uid://cg67np1obqd1a" path="res://Sprites/backgrounds/patient_room1.jpg" id="6_sey07"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
 [ext_resource type="Texture2D" uid="uid://c2e1o234gwd8e" path="res://Sprites/backgrounds/patient_room2.jpg" id="7_xxk1d"]
 [ext_resource type="Texture2D" uid="uid://bemucowm8sx8j" path="res://Sprites/backgrounds/patient_room3.jpg" id="8_v020d"]
 [ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
-[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://scenes/collectable_item.tscn" id="11_33yrk"]
+[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="11_33yrk"]
 [ext_resource type="Script" path="res://scenes/orange_hair.gd" id="15_mdatf"]
-[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://scenes/player_detector.tscn" id="16_4sr81"]
+[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://Scenes/player_detector.tscn" id="16_4sr81"]
 [ext_resource type="Texture2D" uid="uid://cfkq7hi13tgb8" path="res://Sprites/characters/Angelina_Slade.png" id="16_mfdkm"]
 [ext_resource type="FontFile" uid="uid://b5kn6o17w7igv" path="res://assets/PixelGuzel.ttf" id="17_uerat"]
 
@@ -115,21 +115,22 @@ size = Vector2(86, 58)
 size = Vector2(148, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjltn"]
-size = Vector2(36, 30)
+size = Vector2(36, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8krwk"]
-size = Vector2(51.5, 36)
+size = Vector2(75.75, 46)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_malji"]
-a = Vector2(276, 16)
-b = Vector2(15, 17)
+a = Vector2(358, 17)
+b = Vector2(-72, 17)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_nk335"]
-a = Vector2(366, 101)
+a = Vector2(529, 101)
 b = Vector2(51, 101)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rvmnv"]
-b = Vector2(0, 161)
+a = Vector2(0, -33)
+b = Vector2(0, 225)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0uu8o"]
 radius = 13.0384
@@ -169,7 +170,7 @@ position = Vector2(865, 1)
 texture = ExtResource("2_xkyol")
 
 [node name="Garden" type="Sprite2D" parent="gameplay/Backgrounds"]
-position = Vector2(865, 303)
+position = Vector2(863, 347)
 texture = ExtResource("5_n0fax")
 
 [node name="Patient_room1" type="Sprite2D" parent="gameplay/Backgrounds"]
@@ -290,91 +291,91 @@ shape = SubResource("SegmentShape2D_gy7jd")
 [node name="Garden_collision" type="StaticBody2D" parent="gameplay"]
 
 [node name="spring" type="CollisionPolygon2D" parent="gameplay/Garden_collision"]
-position = Vector2(805, 295)
-polygon = PackedVector2Array(81, 27, 69, 32, 53, 32, 40, 25, 43, -12, 55, -13, 62, -4, 66, -13, 79, -13)
+position = Vector2(804, 337)
+polygon = PackedVector2Array(86, 24, 69, 32, 53, 32, 31, 24, 31, -13, 45, -22, 59, -8, 75, -22, 84, -12)
 
 [node name="wood_shack" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(984, 258)
+position = Vector2(984, 268)
 shape = SubResource("RectangleShape2D_yjltn")
 
 [node name="house" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(730.25, 235)
+position = Vector2(661.125, 240)
 shape = SubResource("RectangleShape2D_8krwk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(741, 208)
+position = Vector2(741, 205)
 shape = SubResource("SegmentShape2D_malji")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(654, 279)
+position = Vector2(573, 370)
 shape = SubResource("SegmentShape2D_nk335")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(706, 218)
+position = Vector2(623, 250)
 shape = SubResource("SegmentShape2D_rvmnv")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(1018, 220)
+position = Vector2(1100, 246)
 shape = SubResource("SegmentShape2D_rvmnv")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(722, 276)
+position = Vector2(648, 304)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(744, 276)
+position = Vector2(678, 306)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(765, 276)
+position = Vector2(712, 305)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(785, 276)
+position = Vector2(742, 305)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(806, 276)
+position = Vector2(773, 305)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(722, 327)
+position = Vector2(649, 380)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(744, 327)
+position = Vector2(680, 380)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(765, 327)
+position = Vector2(713, 380)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(785, 327)
+position = Vector2(742, 379)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(806, 327)
+position = Vector2(774, 383)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(918, 327)
+position = Vector2(946, 383)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(940, 327)
+position = Vector2(975, 381)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(961, 327)
+position = Vector2(1007, 381)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(981, 327)
+position = Vector2(1040, 381)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(1002, 327)
+position = Vector2(1069, 381)
 shape = SubResource("CircleShape2D_0uu8o")
 
 [node name="PatientRooms_collision" type="StaticBody2D" parent="gameplay"]
@@ -468,11 +469,11 @@ target_position = Vector2(527, 33)
 [node name="cor3-garden" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(864.75, 87)
 scale = Vector2(0.921875, 0.171875)
-target_position = Vector2(720, 311)
+target_position = Vector2(650, 360)
 
 [node name="garden-cor3" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
-position = Vector2(707, 311.5)
-scale = Vector2(0.125, 0.40625)
+position = Vector2(626, 359.5)
+scale = Vector2(0.187501, 0.53125)
 target_position = Vector2(865, 60)
 
 [node name="cor2-pt1" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
