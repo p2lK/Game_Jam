@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=26 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="4_a0tpe"]
 [ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
+[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://scenes/collectable_item.tscn" id="9_8e650"]
+[ext_resource type="Texture2D" uid="uid://dguueyvvmtj20" path="res://Sprites/deco/bird1.png" id="10_dhk8x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vixo0"]
 size = Vector2(13, 16)
@@ -204,3 +206,14 @@ target_position = Vector2(10, 0)
 position = Vector2(523, -47.75)
 scale = Vector2(1.125, 0.171875)
 target_position = Vector2(950, 0)
+
+[node name="bird" type="Node2D" parent="."]
+
+[node name="birb" parent="bird" instance=ExtResource("9_8e650")]
+position = Vector2(-59.75, 17)
+scale = Vector2(0.375, 0.359375)
+
+[node name="Sprite2D" type="Sprite2D" parent="bird"]
+position = Vector2(-58.875, 10)
+scale = Vector2(0.012125, 0.014)
+texture = ExtResource("10_dhk8x")

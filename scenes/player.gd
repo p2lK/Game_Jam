@@ -36,3 +36,7 @@ func _physics_process(delta):
 		velocity = dir * speed
 		
 		move_and_slide()
+
+
+func _on_birb_item_collected(item_name):
+	pass # Replace with function body.
