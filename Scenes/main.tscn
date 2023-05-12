@@ -7,16 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://Sprites/backgrounds/corridor2.png" id="2_xkyol"]
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
 [ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="5_n0fax"]
-[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://Scenes/teleporter.tscn" id="5_nhd1s"]
+[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
 [ext_resource type="Texture2D" uid="uid://cg67np1obqd1a" path="res://Sprites/backgrounds/patient_room1.jpg" id="6_sey07"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
 [ext_resource type="Texture2D" uid="uid://c2e1o234gwd8e" path="res://Sprites/backgrounds/patient_room2.jpg" id="7_xxk1d"]
 [ext_resource type="Texture2D" uid="uid://bemucowm8sx8j" path="res://Sprites/backgrounds/patient_room3.jpg" id="8_v020d"]
 [ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
-[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="11_33yrk"]
+[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://scenes/collectable_item.tscn" id="11_33yrk"]
 [ext_resource type="Texture2D" uid="uid://bs3ydawgcobbp" path="res://Sprites/characters/orange_hair.png" id="15_32d1a"]
 [ext_resource type="Script" path="res://scenes/orange_hair.gd" id="15_mdatf"]
-[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://Scenes/player_detector.tscn" id="16_4sr81"]
+[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://scenes/player_detector.tscn" id="16_4sr81"]
 [ext_resource type="FontFile" uid="uid://b5kn6o17w7igv" path="res://assets/PixelGuzel.ttf" id="17_uerat"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1kh4"]
@@ -141,33 +141,33 @@ metadata/_edit_vertical_guides_ = [264.0, 547.0, 88.0, -246.0, 716.0, 865.0]
 [node name="gameplay" type="Node2D" parent="."]
 script = ExtResource("1_kjmec")
 
-[node name="backgrounds" type="Node2D" parent="gameplay"]
+[node name="Backgrounds" type="Node2D" parent="gameplay"]
 
-[node name="Corridor1" type="Sprite2D" parent="gameplay/backgrounds"]
+[node name="Corridor1" type="Sprite2D" parent="gameplay/Backgrounds"]
 position = Vector2(-184, -77)
 texture = ExtResource("2_5jc54")
 
-[node name="Corridor2" type="Sprite2D" parent="gameplay/backgrounds"]
+[node name="Corridor2" type="Sprite2D" parent="gameplay/Backgrounds"]
 position = Vector2(383, 3)
 texture = ExtResource("1_8sc0c")
 
-[node name="Corridor3" type="Sprite2D" parent="gameplay/backgrounds"]
+[node name="Corridor3" type="Sprite2D" parent="gameplay/Backgrounds"]
 position = Vector2(865, 1)
 texture = ExtResource("2_xkyol")
 
-[node name="Garden" type="Sprite2D" parent="gameplay/backgrounds"]
+[node name="Garden" type="Sprite2D" parent="gameplay/Backgrounds"]
 position = Vector2(865, 303)
 texture = ExtResource("5_n0fax")
 
-[node name="patient_room1" type="Sprite2D" parent="gameplay/backgrounds"]
+[node name="Patient_room1" type="Sprite2D" parent="gameplay/Backgrounds"]
 position = Vector2(101, -430)
 texture = ExtResource("6_sey07")
 
-[node name="patient_room2" type="Sprite2D" parent="gameplay/backgrounds"]
+[node name="Patient_room2" type="Sprite2D" parent="gameplay/Backgrounds"]
 position = Vector2(411, -430)
 texture = ExtResource("7_xxk1d")
 
-[node name="patient_room3" type="Sprite2D" parent="gameplay/backgrounds"]
+[node name="Patient_room3" type="Sprite2D" parent="gameplay/Backgrounds"]
 position = Vector2(687, -430)
 texture = ExtResource("8_v020d")
 
@@ -184,7 +184,7 @@ sprite_frames = SubResource("SpriteFrames_15are")
 animation = &"idle"
 metadata/_edit_lock_ = true
 
-[node name="camera" type="Camera2D" parent="gameplay/player"]
+[node name="Camera" type="Camera2D" parent="gameplay/player"]
 
 [node name="Corridor1_collision" type="StaticBody2D" parent="gameplay"]
 position = Vector2(-133, 0)
@@ -248,29 +248,29 @@ shape = SubResource("SegmentShape2D_xgnj8")
 position = Vector2(-158, -79)
 shape = SubResource("SegmentShape2D_xgnj8")
 
-[node name="corridor3_collision" type="StaticBody2D" parent="gameplay"]
+[node name="Corridor3_collision" type="StaticBody2D" parent="gameplay"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/corridor3_collision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/Corridor3_collision"]
 position = Vector2(748, -60)
 shape = SubResource("RectangleShape2D_eyh7x")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/corridor3_collision"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/Corridor3_collision"]
 position = Vector2(982, -60)
 shape = SubResource("RectangleShape2D_eyh7x")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/corridor3_collision"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/Corridor3_collision"]
 position = Vector2(865, -71.5)
 shape = SubResource("RectangleShape2D_uhyh1")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="gameplay/corridor3_collision"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="gameplay/Corridor3_collision"]
 position = Vector2(705, 90)
 shape = SubResource("SegmentShape2D_xgnj8")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="gameplay/corridor3_collision"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="gameplay/Corridor3_collision"]
 position = Vector2(706, -89)
 shape = SubResource("SegmentShape2D_gy7jd")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="gameplay/corridor3_collision"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="gameplay/Corridor3_collision"]
 position = Vector2(1024, -89)
 shape = SubResource("SegmentShape2D_gy7jd")
 
@@ -438,20 +438,20 @@ texture = ExtResource("10_hvk5k")
 position = Vector2(-0.5, 4.5)
 scale = Vector2(0.34375, 0.28125)
 
-[node name="characters" type="Node2D" parent="gameplay"]
+[node name="Characters" type="Node2D" parent="gameplay"]
 
-[node name="orange_hair" type="Node2D" parent="gameplay/characters"]
+[node name="orange_hair" type="Node2D" parent="gameplay/Characters"]
 script = ExtResource("15_mdatf")
 
-[node name="sprite" type="Sprite2D" parent="gameplay/characters/orange_hair"]
-position = Vector2(74, -407)
+[node name="sprite" type="Sprite2D" parent="gameplay/Characters/orange_hair"]
+position = Vector2(97, -412)
 texture = ExtResource("15_32d1a")
 
-[node name="player_detector" parent="gameplay/characters/orange_hair" instance=ExtResource("16_4sr81")]
-position = Vector2(73, -403.5)
+[node name="player_detector" parent="gameplay/Characters/orange_hair" instance=ExtResource("16_4sr81")]
+position = Vector2(96, -408.5)
 scale = Vector2(0.625, 0.84375)
 
-[node name="label" type="Label" parent="gameplay/characters/orange_hair"]
+[node name="label" type="Label" parent="gameplay/Characters/orange_hair"]
 offset_left = 36.0
 offset_top = -481.0
 offset_right = 164.0
@@ -461,6 +461,7 @@ theme_override_font_sizes/font_size = 9
 text = "press space to interact"
 vertical_alignment = 1
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
-[connection signal="interacted_with" from="gameplay/characters/orange_hair/player_detector" to="gameplay/characters/orange_hair" method="_on_player_detector_interacted_with"]
-[connection signal="player_exited" from="gameplay/characters/orange_hair/player_detector" to="gameplay/characters/orange_hair" method="_on_player_detector_player_exited"]
+[connection signal="interacted_with" from="gameplay/Characters/orange_hair/player_detector" to="gameplay/Characters/orange_hair" method="_on_player_detector_interacted_with"]
+[connection signal="player_exited" from="gameplay/Characters/orange_hair/player_detector" to="gameplay/Characters/orange_hair" method="_on_player_detector_player_exited"]
