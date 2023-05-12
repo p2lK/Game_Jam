@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=42 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bemucowm8sx8j" path="res://Sprites/backgrounds/patient_room3.jpg" id="8_v020d"]
 [ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
 [ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="11_33yrk"]
+[ext_resource type="Texture2D" uid="uid://bs3ydawgcobbp" path="res://Sprites/characters/orange_hair.png" id="15_32d1a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1kh4"]
 radius = 5.0
@@ -433,3 +434,11 @@ texture = ExtResource("10_hvk5k")
 [node name="collectable_item" parent="gameplay/items/leg" instance=ExtResource("11_33yrk")]
 position = Vector2(-0.5, 4.5)
 scale = Vector2(0.34375, 0.28125)
+
+[node name="characters" type="Node2D" parent="gameplay"]
+
+[node name="orange_hair" type="Node2D" parent="gameplay/characters"]
+
+[node name="sprite" type="Sprite2D" parent="gameplay/characters/orange_hair"]
+position = Vector2(74, -407)
+texture = ExtResource("15_32d1a")
