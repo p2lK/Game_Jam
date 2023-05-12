@@ -7,11 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://Sprites/backgrounds/corridor2.png" id="2_xkyol"]
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
 [ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="5_n0fax"]
-[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
+[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://Scenes/teleporter.tscn" id="5_nhd1s"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vixo0"]
-size = Vector2(14, 18)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1kh4"]
+radius = 5.0
+height = 19.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qmaw"]
 atlas = ExtResource("3_amvyg")
@@ -134,11 +135,11 @@ script = ExtResource("1_kjmec")
 [node name="backgrounds" type="Node2D" parent="gameplay"]
 
 [node name="Corridor1" type="Sprite2D" parent="gameplay/backgrounds"]
-position = Vector2(-51, -77)
+position = Vector2(-184, -77)
 texture = ExtResource("2_5jc54")
 
 [node name="Corridor2" type="Sprite2D" parent="gameplay/backgrounds"]
-position = Vector2(403, 3)
+position = Vector2(383, 3)
 texture = ExtResource("1_8sc0c")
 
 [node name="Corridor3" type="Sprite2D" parent="gameplay/backgrounds"]
@@ -150,12 +151,12 @@ position = Vector2(865, 303)
 texture = ExtResource("5_n0fax")
 
 [node name="player" type="CharacterBody2D" parent="gameplay"]
-position = Vector2(-2, -15)
+position = Vector2(-135, -15)
 script = ExtResource("2_epvge")
 
 [node name="col" type="CollisionShape2D" parent="gameplay/player"]
-position = Vector2(1, 7)
-shape = SubResource("RectangleShape2D_vixo0")
+position = Vector2(1, 6.5)
+shape = SubResource("CapsuleShape2D_x1kh4")
 
 [node name="midas_lennox" type="AnimatedSprite2D" parent="gameplay/player"]
 sprite_frames = SubResource("SpriteFrames_15are")
@@ -165,6 +166,7 @@ metadata/_edit_lock_ = true
 [node name="camera" type="Camera2D" parent="gameplay/player"]
 
 [node name="Corridor1_collision" type="StaticBody2D" parent="gameplay"]
+position = Vector2(-133, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/Corridor1_collision"]
 position = Vector2(-142.5, -126.5)
@@ -195,7 +197,7 @@ position = Vector2(-211, 8)
 shape = SubResource("SegmentShape2D_1spqg")
 
 [node name="Corridor2_collision" type="StaticBody2D" parent="gameplay"]
-position = Vector2(403, 3)
+position = Vector2(383, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/Corridor2_collision"]
 position = Vector2(-159, -89)
@@ -344,31 +346,31 @@ shape = SubResource("CircleShape2D_0uu8o")
 [node name="teleporters" type="Node2D" parent="gameplay"]
 
 [node name="cor1-cor2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
-position = Vector2(105.5, -46.75)
-scale = Vector2(0.21875, 0.921875)
-target_position = Vector2(260, 20)
+position = Vector2(-26.25, -46.5)
+scale = Vector2(0.234375, 0.90625)
+target_position = Vector2(240, 20)
 
 [node name="cor2-cor1" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
-position = Vector2(246.5, 33.5)
+position = Vector2(226.5, 33.5)
 scale = Vector2(0.21875, 0.96875)
-target_position = Vector2(88, -55)
+target_position = Vector2(-50, -50)
 
 [node name="cor2-cor3" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
-position = Vector2(559.5, 33.5)
+position = Vector2(539.5, 33.5)
 scale = Vector2(0.21875, 0.96875)
 target_position = Vector2(720, 31)
 
 [node name="cor3-cor2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(708.5, 31.5)
 scale = Vector2(0.218751, 0.96875)
-target_position = Vector2(547, 33)
+target_position = Vector2(527, 33)
 
 [node name="cor3-garden" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(864.75, 87)
 scale = Vector2(0.921875, 0.171875)
-target_position = Vector2(716, 311)
+target_position = Vector2(720, 311)
 
 [node name="garden-cor3" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(707, 311.5)
 scale = Vector2(0.125, 0.40625)
-target_position = Vector2(865, 75)
+target_position = Vector2(865, 60)
