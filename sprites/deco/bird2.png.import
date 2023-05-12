@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdwvwfs4h6vi7"
-path="res://.godot/imported/bird2.png-cc5eb495a4e84c13404108b6ee3dd4c5.ctex"
+path="res://.godot/imported/bird2.png-62e90bf7ce49a61259499ff3a2755d24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/deco/bird2.png"
-dest_files=["res://.godot/imported/bird2.png-cc5eb495a4e84c13404108b6ee3dd4c5.ctex"]
+source_file="res://sprites/deco/bird2.png"
+dest_files=["res://.godot/imported/bird2.png-62e90bf7ce49a61259499ff3a2755d24.ctex"]
 
 [params]
 

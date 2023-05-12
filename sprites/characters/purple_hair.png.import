@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dry6ga3ihgarv"
-path="res://.godot/imported/purple_hair.png-a4f37f6bb6f489b82b208792a96ab780.ctex"
+path="res://.godot/imported/purple_hair.png-5633b6acc9134d12e75e6480fe089943.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/characters/purple_hair.png"
-dest_files=["res://.godot/imported/purple_hair.png-a4f37f6bb6f489b82b208792a96ab780.ctex"]
+source_file="res://sprites/characters/purple_hair.png"
+dest_files=["res://.godot/imported/purple_hair.png-5633b6acc9134d12e75e6480fe089943.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var player = $player
+@onready var teleporters = $teleporters.get_children()
 
 var time = -1
 var time_to_transition = .5
@@ -9,6 +10,11 @@ var player_target_pos
 
 var last_alpha
 var goal_alpha
+
+func _ready():
+	for teleporter in teleporters:
+		var my_callable = Callable(self, 'set_player_position')
+		teleporter.connect('teleport_player_to', set_player_position)
 
 func _process(delta):
 	if time >= 0:
@@ -39,12 +45,3 @@ func set_player_position(new_pos: Vector2):
 	player_target_pos = new_pos
 	time = 0
 	set_new_alpha(0)
-
-func _on_teleporter_3_teleport_player_to(target_position):
-	set_player_position(target_position)
-
-func _on_teleporter_2_teleport_player_to(target_position):
-	set_player_position(target_position)
-
-func _on_teleporter_teleport_player_to(target_position):
-	set_player_position(target_position)

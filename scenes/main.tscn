@@ -1,12 +1,12 @@
 [gd_scene load_steps=18 format=3 uid="uid://m46lfebhisxf"]
 
-[ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
+[ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="2_epvge"]
-[ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://Sprites/backgrounds/corridor2.png" id="2_xkyol"]
-[ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
-[ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="4_a0tpe"]
-[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://Scenes/teleporter.tscn" id="5_nhd1s"]
+[ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://sprites/backgrounds/corridor2.png" id="2_xkyol"]
+[ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
+[ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://sprites/backgrounds/garden.png" id="4_a0tpe"]
+[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vixo0"]
 size = Vector2(20, 16)
@@ -118,21 +118,23 @@ shape = SubResource("RectangleShape2D_nq05i")
 position = Vector2(117.25, -54.5)
 shape = SubResource("RectangleShape2D_67d3b")
 
-[node name="teleporter" parent="gameplay" instance=ExtResource("5_nhd1s")]
+[node name="teleporters" type="Node2D" parent="gameplay"]
+
+[node name="teleporter" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(157, 30.5)
 scale = Vector2(0.1875, 0.90625)
 target_position = Vector2(260, 30)
 
-[node name="teleporter2" parent="gameplay" instance=ExtResource("5_nhd1s")]
+[node name="teleporter2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(243, 30.5)
 scale = Vector2(0.1875, 0.90625)
 target_position = Vector2(120, 30)
 
-[node name="teleporter3" parent="gameplay" instance=ExtResource("5_nhd1s")]
+[node name="teleporter3" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(115, -14.5)
 scale = Vector2(0.625, 0.28125)
 target_position = Vector2(10, 0)
 
-[connection signal="teleport_player_to" from="gameplay/teleporter" to="gameplay" method="_on_teleporter_teleport_player_to"]
-[connection signal="teleport_player_to" from="gameplay/teleporter2" to="gameplay" method="_on_teleporter_2_teleport_player_to"]
-[connection signal="teleport_player_to" from="gameplay/teleporter3" to="gameplay" method="_on_teleporter_3_teleport_player_to"]
+[node name="teleporter4" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(395, -60)
+target_position = Vector2(950, 0)

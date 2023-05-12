@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf5mt8krs46n6"
-path="res://.godot/imported/guts2.png-d4e02b9e2ab6cc92a7ac7893f65f628c.ctex"
+path="res://.godot/imported/guts2.png-f73a878cad119c4fc30159afd3d91cd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/deco/guts2.png"
-dest_files=["res://.godot/imported/guts2.png-d4e02b9e2ab6cc92a7ac7893f65f628c.ctex"]
+source_file="res://sprites/deco/guts2.png"
+dest_files=["res://.godot/imported/guts2.png-f73a878cad119c4fc30159afd3d91cd5.ctex"]
 
 [params]
 
