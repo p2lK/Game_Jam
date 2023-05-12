@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=26 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/player.gd" id="2_epvge"]
 [ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://Sprites/backgrounds/corridor2.png" id="2_xkyol"]
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
+[ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="5_n0fax"]
 [ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
 
@@ -64,6 +65,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2f14"]
+size = Vector2(138, 37)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_gy7jd"]
 a = Vector2(0, -1)
@@ -88,10 +90,11 @@ size = Vector2(86, 58)
 size = Vector2(148, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2wkk"]
+size = Vector2(38, 43.5)
 
 [node name="main" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [30.0]
-metadata/_edit_vertical_guides_ = [260.0, 390.0, 135.0]
+metadata/_edit_vertical_guides_ = [260.0, 390.0, 135.0, -246.0]
 
 [node name="gameplay" type="Node2D" parent="."]
 script = ExtResource("1_kjmec")
@@ -109,6 +112,10 @@ texture = ExtResource("1_8sc0c")
 [node name="Corridor3" type="Sprite2D" parent="gameplay/backgrounds"]
 position = Vector2(865, 1)
 texture = ExtResource("2_xkyol")
+
+[node name="Garden" type="Sprite2D" parent="gameplay/backgrounds"]
+position = Vector2(865, 303)
+texture = ExtResource("5_n0fax")
 
 [node name="player" type="CharacterBody2D" parent="gameplay"]
 position = Vector2(403, 3)
@@ -128,6 +135,7 @@ animation = &"idle"
 [node name="StaticBody2D" type="StaticBody2D" parent="gameplay"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
+position = Vector2(-142, -126.5)
 shape = SubResource("RectangleShape2D_x2f14")
 
 [node name="Corridor2_collision" type="StaticBody2D" parent="gameplay"]
@@ -190,7 +198,7 @@ shape = SubResource("SegmentShape2D_gy7jd")
 [node name="Garden_collision" type="StaticBody2D" parent="gameplay"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(133, 114)
+position = Vector2(865, 303.25)
 shape = SubResource("RectangleShape2D_i2wkk")
 
 [node name="teleporters" type="Node2D" parent="gameplay"]
