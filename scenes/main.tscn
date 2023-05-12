@@ -303,7 +303,7 @@ position = Vector2(661.125, 240)
 shape = SubResource("RectangleShape2D_8krwk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/Garden_collision"]
-position = Vector2(741, 208)
+position = Vector2(741, 205)
 shape = SubResource("SegmentShape2D_malji")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/Garden_collision"]
