@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7knvckajeviv"
-path="res://.godot/imported/dark_red_hair.png-30dfdb334e8e757b0c9cd3e8a55cd514.ctex"
+path="res://.godot/imported/dark_red_hair.png-8d18c0b741c50f10bdd5d8667264968d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/dark_red_hair.png"
-dest_files=["res://.godot/imported/dark_red_hair.png-30dfdb334e8e757b0c9cd3e8a55cd514.ctex"]
+source_file="res://Sprites/characters/dark_red_hair.png"
+dest_files=["res://.godot/imported/dark_red_hair.png-8d18c0b741c50f10bdd5d8667264968d.ctex"]
 
 [params]
 
