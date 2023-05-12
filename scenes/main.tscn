@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://Sprites/backgrounds/corridor2.png" id="2_xkyol"]
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
 [ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="5_n0fax"]
-[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
+[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://Scenes/teleporter.tscn" id="5_nhd1s"]
 [ext_resource type="Texture2D" uid="uid://cg67np1obqd1a" path="res://Sprites/backgrounds/patient_room1.jpg" id="6_sey07"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
 [ext_resource type="Texture2D" uid="uid://c2e1o234gwd8e" path="res://Sprites/backgrounds/patient_room2.jpg" id="7_xxk1d"]
@@ -15,11 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://n8liwh0rk7tb" path="res://Sprites/backgrounds/bureau.jpg" id="9_44tbe"]
 [ext_resource type="Texture2D" uid="uid://byq257pplvcan" path="res://Sprites/backgrounds/bathroom.jpg" id="10_b62j2"]
 [ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
-[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://scenes/collectable_item.tscn" id="11_33yrk"]
+[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="11_33yrk"]
 [ext_resource type="Script" path="res://scenes/task_display.gd" id="14_cu32g"]
 [ext_resource type="Texture2D" uid="uid://23tna5akds1g" path="res://Sprites/items/white_square_32x32.png" id="14_xk0md"]
 [ext_resource type="Script" path="res://scenes/orange_hair.gd" id="15_mdatf"]
-[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://scenes/player_detector.tscn" id="16_4sr81"]
+[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://Scenes/player_detector.tscn" id="16_4sr81"]
 [ext_resource type="Texture2D" uid="uid://cfkq7hi13tgb8" path="res://Sprites/characters/Angelina_Slade.png" id="16_mfdkm"]
 [ext_resource type="FontFile" uid="uid://b5kn6o17w7igv" path="res://assets/PixelGuzel.ttf" id="17_uerat"]
 [ext_resource type="Texture2D" uid="uid://l1rqyp3epav7" path="res://Sprites/backgrounds/wooden_shack.jpg" id="21_0oku6"]
@@ -238,8 +238,15 @@ position = Vector2(-246, -549)
 texture = ExtResource("10_b62j2")
 
 [node name="player" type="CharacterBody2D" parent="gameplay"]
+z_index = 1
 position = Vector2(-280, -300)
 script = ExtResource("2_epvge")
+
+[node name="black_screen" type="Sprite2D" parent="gameplay/player"]
+modulate = Color(0, 0, 0, 0)
+z_index = 1
+scale = Vector2(100, 100)
+texture = ExtResource("14_xk0md")
 
 [node name="col" type="CollisionShape2D" parent="gameplay/player"]
 position = Vector2(1, 6.5)
