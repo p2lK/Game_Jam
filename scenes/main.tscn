@@ -2,13 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
+[ext_resource type="Texture2D" uid="uid://bosge7pgyj2j0" path="res://Sprites/backgrounds/corridor3.png" id="2_5jc54"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="2_epvge"]
 [ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://Sprites/backgrounds/corridor2.png" id="2_xkyol"]
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
 [ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
-[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://scenes/collectable_item.tscn" id="9_8e650"]
-[ext_resource type="Texture2D" uid="uid://dguueyvvmtj20" path="res://Sprites/deco/bird1.png" id="10_dhk8x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vixo0"]
 size = Vector2(13, 16)
@@ -64,6 +63,8 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2f14"]
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_gy7jd"]
 a = Vector2(0, -1)
 b = Vector2(0, 179)
@@ -98,117 +99,118 @@ script = ExtResource("1_kjmec")
 [node name="backgrounds" type="Node2D" parent="gameplay"]
 
 [node name="Corridor1" type="Sprite2D" parent="gameplay/backgrounds"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_8sc0c")
+position = Vector2(-51, -77)
+texture = ExtResource("2_5jc54")
 
 [node name="Corridor2" type="Sprite2D" parent="gameplay/backgrounds"]
-position = Vector2(527, -1)
-scale = Vector2(0.1, 0.1)
+position = Vector2(403, 3)
+texture = ExtResource("1_8sc0c")
+
+[node name="Corridor3" type="Sprite2D" parent="gameplay/backgrounds"]
+position = Vector2(865, 1)
 texture = ExtResource("2_xkyol")
 
 [node name="player" type="CharacterBody2D" parent="gameplay"]
+position = Vector2(403, 3)
 script = ExtResource("2_epvge")
 
 [node name="col" type="CollisionShape2D" parent="gameplay/player"]
-position = Vector2(0.5, 7)
+position = Vector2(-403, -9)
 shape = SubResource("RectangleShape2D_vixo0")
 
 [node name="midas_lennox" type="AnimatedSprite2D" parent="gameplay/player"]
+position = Vector2(-404, -16)
 sprite_frames = SubResource("SpriteFrames_15are")
 animation = &"idle"
 
 [node name="camera" type="Camera2D" parent="gameplay/player"]
 
-[node name="Corridor1_collision" type="StaticBody2D" parent="gameplay"]
+[node name="StaticBody2D" type="StaticBody2D" parent="gameplay"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/Corridor1_collision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
+shape = SubResource("RectangleShape2D_x2f14")
+
+[node name="Corridor2_collision" type="StaticBody2D" parent="gameplay"]
+position = Vector2(403, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/Corridor2_collision"]
 position = Vector2(-159, -89)
 shape = SubResource("SegmentShape2D_gy7jd")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/Corridor1_collision"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/Corridor2_collision"]
 position = Vector2(117.25, -61)
 shape = SubResource("RectangleShape2D_67d3b")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/Corridor1_collision"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/Corridor2_collision"]
 position = Vector2(-117, -60.5)
 shape = SubResource("RectangleShape2D_rr88a")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="gameplay/Corridor1_collision"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="gameplay/Corridor2_collision"]
 position = Vector2(0.5, -61)
 shape = SubResource("RectangleShape2D_86awa")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="gameplay/Corridor1_collision"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="gameplay/Corridor2_collision"]
 position = Vector2(160, -89)
 shape = SubResource("SegmentShape2D_gy7jd")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="gameplay/Corridor1_collision"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="gameplay/Corridor2_collision"]
 position = Vector2(-159, 89)
 shape = SubResource("SegmentShape2D_xgnj8")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="gameplay/Corridor1_collision"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="gameplay/Corridor2_collision"]
 position = Vector2(-158, -79)
 shape = SubResource("SegmentShape2D_xgnj8")
 
-[node name="corridor2_collision" type="StaticBody2D" parent="gameplay"]
+[node name="corridor3_collision" type="StaticBody2D" parent="gameplay"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/corridor2_collision"]
-position = Vector2(410, -62)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/corridor3_collision"]
+position = Vector2(748, -60)
 shape = SubResource("RectangleShape2D_eyh7x")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/corridor2_collision"]
-position = Vector2(644, -62)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/corridor3_collision"]
+position = Vector2(982, -60)
 shape = SubResource("RectangleShape2D_eyh7x")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/corridor2_collision"]
-position = Vector2(527, -73.5)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/corridor3_collision"]
+position = Vector2(865, -71.5)
 shape = SubResource("RectangleShape2D_uhyh1")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="gameplay/corridor2_collision"]
-position = Vector2(367, 88)
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="gameplay/corridor3_collision"]
+position = Vector2(705, 90)
 shape = SubResource("SegmentShape2D_xgnj8")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="gameplay/corridor2_collision"]
-position = Vector2(368, -91)
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="gameplay/corridor3_collision"]
+position = Vector2(706, -89)
 shape = SubResource("SegmentShape2D_gy7jd")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="gameplay/corridor2_collision"]
-position = Vector2(686, -91)
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="gameplay/corridor3_collision"]
+position = Vector2(1024, -89)
 shape = SubResource("SegmentShape2D_gy7jd")
 
 [node name="Garden_collision" type="StaticBody2D" parent="gameplay"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/Garden_collision"]
+position = Vector2(133, 114)
 shape = SubResource("RectangleShape2D_i2wkk")
 
 [node name="teleporters" type="Node2D" parent="gameplay"]
 
 [node name="teleporter" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
-position = Vector2(157, 30.5)
+position = Vector2(560, 33.5)
 scale = Vector2(0.1875, 0.90625)
 target_position = Vector2(390, 30)
 
 [node name="teleporter2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
-position = Vector2(370, 29.5)
+position = Vector2(708, 31.5)
 scale = Vector2(0.1875, 0.90625)
 target_position = Vector2(135, 30)
 
 [node name="teleporter3" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
-position = Vector2(486, 1)
+position = Vector2(824, 3)
 scale = Vector2(0.1875, 0.40625)
 target_position = Vector2(10, 0)
 
 [node name="teleporter4" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
-position = Vector2(526.75, 85)
+position = Vector2(864.75, 87)
 scale = Vector2(0.921875, 0.171875)
 target_position = Vector2(950, 0)
-
-[node name="bird" type="Node2D" parent="."]
-
-[node name="birb" parent="bird" instance=ExtResource("9_8e650")]
-position = Vector2(-59.75, 17)
-scale = Vector2(0.375, 0.359375)
-
-[node name="Sprite2D" type="Sprite2D" parent="bird"]
-position = Vector2(-58.875, 10)
-scale = Vector2(0.012125, 0.014)
-texture = ExtResource("10_dhk8x")
