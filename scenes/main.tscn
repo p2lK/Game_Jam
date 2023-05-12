@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bemucowm8sx8j" path="res://Sprites/backgrounds/patient_room3.jpg" id="8_v020d"]
 [ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
 [ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://scenes/collectable_item.tscn" id="11_33yrk"]
-[ext_resource type="Texture2D" uid="uid://bs3ydawgcobbp" path="res://Sprites/characters/orange_hair.png" id="15_32d1a"]
 [ext_resource type="Script" path="res://scenes/orange_hair.gd" id="15_mdatf"]
 [ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://scenes/player_detector.tscn" id="16_4sr81"]
+[ext_resource type="Texture2D" uid="uid://cfkq7hi13tgb8" path="res://Sprites/characters/Angelina_Slade.png" id="16_mfdkm"]
 [ext_resource type="FontFile" uid="uid://b5kn6o17w7igv" path="res://assets/PixelGuzel.ttf" id="17_uerat"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1kh4"]
@@ -443,12 +443,13 @@ scale = Vector2(0.34375, 0.28125)
 [node name="orange_hair" type="Node2D" parent="gameplay/Characters"]
 script = ExtResource("15_mdatf")
 
-[node name="sprite" type="Sprite2D" parent="gameplay/Characters/orange_hair"]
-position = Vector2(97, -412)
-texture = ExtResource("15_32d1a")
+[node name="Sprite2D" type="Sprite2D" parent="gameplay/Characters/orange_hair"]
+position = Vector2(127.5, -411)
+scale = Vector2(0.84375, 0.8125)
+texture = ExtResource("16_mfdkm")
 
 [node name="player_detector" parent="gameplay/Characters/orange_hair" instance=ExtResource("16_4sr81")]
-position = Vector2(96, -408.5)
+position = Vector2(127.5, -410.5)
 scale = Vector2(0.625, 0.84375)
 
 [node name="label" type="Label" parent="gameplay/Characters/orange_hair"]
