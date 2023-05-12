@@ -19,6 +19,9 @@ var player_target_pos
 var last_alpha
 var goal_alpha
 
+var talked_to_patient = false
+var collected_apple = false
+
 func _ready():
 	task_display.visible = true
 

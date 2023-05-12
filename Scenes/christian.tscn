@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://tuaexgd5ou81" path="res://Sprites/items/Mermaid-Christian.png" id="3_p6oyt"]
 [ext_resource type="Texture2D" uid="uid://bx72o1cynw0rr" path="res://Sprites/items/Original-Christian.png" id="4_ul5ag"]
 [ext_resource type="Texture2D" uid="uid://da1m0q3chdd7r" path="res://Sprites/items/Viking-Christian.png" id="5_y5vbb"]
-[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://scenes/collectable_item.tscn" id="6_w821s"]
+[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="6_w821s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j6d7k"]
 animations = [{
