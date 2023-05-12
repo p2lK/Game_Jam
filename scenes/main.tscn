@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=45 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -15,6 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
 [ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="11_33yrk"]
 [ext_resource type="Texture2D" uid="uid://bs3ydawgcobbp" path="res://Sprites/characters/orange_hair.png" id="15_32d1a"]
+[ext_resource type="Script" path="res://scenes/orange_hair.gd" id="15_mdatf"]
+[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://Scenes/player_detector.tscn" id="16_4sr81"]
+[ext_resource type="FontFile" uid="uid://b5kn6o17w7igv" path="res://assets/PixelGuzel.ttf" id="17_uerat"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1kh4"]
 radius = 5.0
@@ -438,7 +441,26 @@ scale = Vector2(0.34375, 0.28125)
 [node name="characters" type="Node2D" parent="gameplay"]
 
 [node name="orange_hair" type="Node2D" parent="gameplay/characters"]
+script = ExtResource("15_mdatf")
 
 [node name="sprite" type="Sprite2D" parent="gameplay/characters/orange_hair"]
 position = Vector2(74, -407)
 texture = ExtResource("15_32d1a")
+
+[node name="player_detector" parent="gameplay/characters/orange_hair" instance=ExtResource("16_4sr81")]
+position = Vector2(73, -403.5)
+scale = Vector2(0.625, 0.84375)
+
+[node name="label" type="Label" parent="gameplay/characters/orange_hair"]
+offset_left = 36.0
+offset_top = -481.0
+offset_right = 164.0
+offset_bottom = -433.0
+theme_override_fonts/font = ExtResource("17_uerat")
+theme_override_font_sizes/font_size = 9
+text = "press space to interact"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="interacted_with" from="gameplay/characters/orange_hair/player_detector" to="gameplay/characters/orange_hair" method="_on_player_detector_interacted_with"]
+[connection signal="player_exited" from="gameplay/characters/orange_hair/player_detector" to="gameplay/characters/orange_hair" method="_on_player_detector_player_exited"]

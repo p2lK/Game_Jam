@@ -2,7 +2,9 @@ extends Sprite2D
 
 @onready var parent = get_parent()
 
-signal interacted_with()
+signal interacted_with
+signal player_entered
+signal player_exited
 
 var time = -1
 var time_to_transition = .5
@@ -21,3 +23,5 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	if body.name == 'player':
 		player_in_this = false
+		
+		emit_signal('player_exited')
