@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var label = $Label
+
 var time_to_transition = 1.0
 var time = -1
 
@@ -25,6 +27,7 @@ func hide_this():
 	set_new_position(Vector2(0, 160))
 
 func unhide_this():
+	change_text()
 	set_new_position(Vector2(0, 0))
 
 func set_new_position(new_pos):
@@ -46,3 +49,27 @@ func ease_in(x: float) -> float:
 func ease_out(x: float) -> float:
 	x = sin((PI / 2) * x)
 	return x
+
+func change_text():
+	var text = ''
+	
+	var parent = get_parent()
+	
+	if parent.talked_to_patient and parent.collected_apple:
+		text = 'Du hast alle Aufgaben für den ersten Tag erledigt, in der finalen Version würdest du jetzt zum zweiten Tag kommen. \nVielen Dank fürs Spielen!!! \nCredits: Writing: Linda \nArt: Emily, Yasemin, Nina\nCoding: Kai, Emily, Laurin'
+	else:
+		text += 'Erledige diese Aufgaben:\n'
+		
+		if !parent.talked_to_patient:
+			text += '- Rede mit deinen Patienten\n'
+		
+		if !parent.collected_apple:
+			text += '- Sammel in der Cafeteria einen Apfel ein\n'
+			text += '- Bring Mr. MacClellan einen Apfel\n'
+		
+		text += '- Vervollständige dein Protokol in diesem Raum\n\n'
+		
+		text += 'Tutorial: WASD zum Bewegen und E/Space zum interagieren.'
+		
+	label.text = text
+		
