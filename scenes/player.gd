@@ -18,7 +18,6 @@ func unlock():
 	can_move = true
 
 func _physics_process(delta):
-	print(task_display_active)
 	if task_display_active:
 		if Input.is_action_just_released("interact"):
 			task_display.hide_this()
@@ -46,4 +45,7 @@ func _physics_process(delta):
 		move_and_slide()
 
 func _on_player_detector_interacted_with():
-	task_display.unhide_this()
+	if !task_display_active:
+		if task_display.time == -1:
+			task_display.unhide_this()
+			task_display_active = true

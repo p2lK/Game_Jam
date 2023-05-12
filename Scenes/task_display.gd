@@ -6,6 +6,9 @@ var time = -1
 var last_pos: Vector2
 var goal_pos: Vector2
 
+func _ready():
+	unhide_this()
+
 func _process(delta):
 	if time >= 0:
 		var t = time / time_to_transition
@@ -25,9 +28,10 @@ func unhide_this():
 	set_new_position(Vector2(0, 0))
 
 func set_new_position(new_pos):
-	time = 0
 	last_pos = position
 	goal_pos = new_pos
+	time = 0
+	print(new_pos)
 
 func change_position(t: float):
 	position = (1-t) * last_pos + t * goal_pos
