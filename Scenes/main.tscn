@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=66 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://Sprites/backgrounds/corridor2.png" id="2_xkyol"]
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
 [ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="5_n0fax"]
-[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://Scenes/teleporter.tscn" id="5_nhd1s"]
+[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
 [ext_resource type="Texture2D" uid="uid://cg67np1obqd1a" path="res://Sprites/backgrounds/patient_room1.jpg" id="6_sey07"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
 [ext_resource type="Texture2D" uid="uid://c2e1o234gwd8e" path="res://Sprites/backgrounds/patient_room2.jpg" id="7_xxk1d"]
@@ -15,11 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://n8liwh0rk7tb" path="res://Sprites/backgrounds/bureau.jpg" id="9_44tbe"]
 [ext_resource type="Texture2D" uid="uid://byq257pplvcan" path="res://Sprites/backgrounds/bathroom.jpg" id="10_b62j2"]
 [ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
-[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="11_33yrk"]
+[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://scenes/collectable_item.tscn" id="11_33yrk"]
 [ext_resource type="Script" path="res://scenes/task_display.gd" id="14_cu32g"]
 [ext_resource type="Texture2D" uid="uid://23tna5akds1g" path="res://Sprites/items/white_square_32x32.png" id="14_xk0md"]
 [ext_resource type="Script" path="res://scenes/orange_hair.gd" id="15_mdatf"]
-[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://Scenes/player_detector.tscn" id="16_4sr81"]
+[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://scenes/player_detector.tscn" id="16_4sr81"]
 [ext_resource type="Texture2D" uid="uid://cfkq7hi13tgb8" path="res://Sprites/characters/Angelina_Slade.png" id="16_mfdkm"]
 [ext_resource type="FontFile" uid="uid://b5kn6o17w7igv" path="res://assets/PixelGuzel.ttf" id="17_uerat"]
 [ext_resource type="Texture2D" uid="uid://l1rqyp3epav7" path="res://Sprites/backgrounds/wooden_shack.jpg" id="21_0oku6"]
@@ -153,6 +153,44 @@ b = Vector2(80, -28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ad1b5"]
 size = Vector2(90, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56ikv"]
+size = Vector2(11, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwwkc"]
+size = Vector2(42, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6mma"]
+size = Vector2(7, 9.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpmhy"]
+size = Vector2(35, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyynh"]
+size = Vector2(54, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4huym"]
+radius = 4.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjcrb"]
+radius = 2.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v1vif"]
+radius = 2.0
+height = 46.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ifbks"]
+radius = 2.0
+height = 24.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w61cr"]
+b = Vector2(0, 92)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_s8rqs"]
+a = Vector2(-104, 45)
+b = Vector2(-11, 44)
 
 [node name="main" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [30.0, 311.0, 75.0, -5.0]
@@ -478,6 +516,58 @@ shape = SubResource("RectangleShape2D_ad1b5")
 position = Vector2(686, -428)
 shape = SubResource("RectangleShape2D_ad1b5")
 
+[node name="Bathroom+Bureau_collision" type="StaticBody2D" parent="gameplay"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/Bathroom+Bureau_collision"]
+position = Vector2(-310, -317.5)
+shape = SubResource("RectangleShape2D_56ikv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/Bathroom+Bureau_collision"]
+position = Vector2(-195, -327.5)
+shape = SubResource("RectangleShape2D_vwwkc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/Bathroom+Bureau_collision"]
+position = Vector2(-283.5, -534.375)
+shape = SubResource("RectangleShape2D_s6mma")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="gameplay/Bathroom+Bureau_collision"]
+position = Vector2(-276.5, -547)
+shape = SubResource("RectangleShape2D_wpmhy")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="gameplay/Bathroom+Bureau_collision"]
+position = Vector2(-227, -547)
+shape = SubResource("RectangleShape2D_tyynh")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="gameplay/Bathroom+Bureau_collision"]
+position = Vector2(-215, -526)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4huym")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="gameplay/Bathroom+Bureau_collision"]
+position = Vector2(-264, -517)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kjcrb")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="gameplay/Bathroom+Bureau_collision"]
+position = Vector2(-257, -534)
+shape = SubResource("CapsuleShape2D_v1vif")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="gameplay/Bathroom+Bureau_collision"]
+position = Vector2(-257, -502)
+shape = SubResource("CapsuleShape2D_ifbks")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="gameplay/Bathroom+Bureau_collision"]
+position = Vector2(-293, -554)
+shape = SubResource("SegmentShape2D_w61cr")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="gameplay/Bathroom+Bureau_collision"]
+position = Vector2(-201, -554)
+shape = SubResource("SegmentShape2D_w61cr")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="gameplay/Bathroom+Bureau_collision"]
+position = Vector2(-190, -508)
+shape = SubResource("SegmentShape2D_s8rqs")
+
 [node name="teleporters" type="Node2D" parent="gameplay"]
 
 [node name="cor1-cor2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
@@ -555,8 +645,8 @@ target_position = Vector2(498, -5)
 [node name="table" type="Node2D" parent="gameplay/items"]
 
 [node name="player_detector" parent="gameplay/items/table" instance=ExtResource("16_4sr81")]
-position = Vector2(-286.5, -310.5)
-scale = Vector2(0.906251, 0.71875)
+position = Vector2(-286.5, -313.5)
+scale = Vector2(0.906251, 0.53125)
 
 [node name="leg" type="Node2D" parent="gameplay/items"]
 position = Vector2(-250, -30)
