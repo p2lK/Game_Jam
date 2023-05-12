@@ -31,7 +31,6 @@ func set_new_position(new_pos):
 	last_pos = position
 	goal_pos = new_pos
 	time = 0
-	print(new_pos)
 
 func change_position(t: float):
 	position = (1-t) * last_pos + t * goal_pos
