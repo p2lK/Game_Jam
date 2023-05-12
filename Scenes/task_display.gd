@@ -1,6 +1,6 @@
 extends Node2D
 
-var time_to_transition = 1
+var time_to_transition = 1.0
 var time = -1
 
 var last_pos: Vector2
@@ -19,7 +19,7 @@ func _process(delta):
 			time = -1
 
 func hide_this():
-	set_new_position(Vector2(0, 120))
+	set_new_position(Vector2(0, 160))
 
 func unhide_this():
 	set_new_position(Vector2(0, 0))

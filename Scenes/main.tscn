@@ -215,7 +215,7 @@ metadata/_edit_lock_ = true
 [node name="Camera" type="Camera2D" parent="gameplay/player"]
 
 [node name="task_display" type="Node2D" parent="gameplay/player"]
-visible = false
+position = Vector2(0, 160)
 script = ExtResource("14_cu32g")
 
 [node name="Sprite2D" type="Sprite2D" parent="gameplay/player/task_display"]
@@ -552,6 +552,12 @@ target_position = Vector2(498, -5)
 
 [node name="items" type="Node2D" parent="gameplay"]
 
+[node name="table" type="Node2D" parent="gameplay/items"]
+
+[node name="player_detector" parent="gameplay/items/table" instance=ExtResource("16_4sr81")]
+position = Vector2(-286.5, -310.5)
+scale = Vector2(0.906251, 0.71875)
+
 [node name="leg" type="Node2D" parent="gameplay/items"]
 position = Vector2(-250, -30)
 
@@ -596,5 +602,6 @@ texture = ExtResource("21_0oku6")
 position = Vector2(1015, -430)
 texture = ExtResource("22_3mf1q")
 
+[connection signal="interacted_with" from="gameplay/items/table/player_detector" to="gameplay/player" method="_on_player_detector_interacted_with"]
 [connection signal="interacted_with" from="gameplay/Characters/orange_hair/player_detector" to="gameplay/Characters/orange_hair" method="_on_player_detector_interacted_with"]
 [connection signal="player_exited" from="gameplay/Characters/orange_hair/player_detector" to="gameplay/Characters/orange_hair" method="_on_player_detector_player_exited"]
