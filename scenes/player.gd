@@ -78,7 +78,6 @@ func _process(delta):
 				unlock()
 				set_new_alpha(0)
 				time = 0
-				print('test')
 
 func set_new_alpha(new_alpha: float):
 	last_alpha = black_screen.modulate[3]
