@@ -1,5 +1,7 @@
 extends Sprite2D
 
+@onready var parent = get_parent()
+
 signal item_collected(item_name: String)
 
 var time = -1
@@ -23,22 +25,22 @@ func _process(delta):
 		if time > time_to_transition:
 			time = -1
 			
-			modulate[3] = goal_alpha
+			parent.modulate[3] = goal_alpha
 			
 			if die_on_finished:
-				queue_free()
+				parent.queue_free()
 
 
 func set_new_alpha(new_alpha: float):
-	last_alpha = modulate[3]
+	last_alpha = parent.modulate[3]
 	goal_alpha = new_alpha
 	time = 0
 
 func change_alpha(t: float):
-	modulate[3] = (1 - t) * last_alpha + t * goal_alpha
+	parent.modulate[3] = (1 - t) * last_alpha + t * goal_alpha
 
 func _on_area_2d_body_entered(body):
 	if body.name == 'player':
-		emit_signal('item_collected', name)
+		emit_signal('item_collected', parent.name)
 		set_new_alpha(0)
 		die_on_finished = true
