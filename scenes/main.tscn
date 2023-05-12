@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=55 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -12,12 +12,18 @@
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
 [ext_resource type="Texture2D" uid="uid://c2e1o234gwd8e" path="res://Sprites/backgrounds/patient_room2.jpg" id="7_xxk1d"]
 [ext_resource type="Texture2D" uid="uid://bemucowm8sx8j" path="res://Sprites/backgrounds/patient_room3.jpg" id="8_v020d"]
+[ext_resource type="Texture2D" uid="uid://n8liwh0rk7tb" path="res://Sprites/backgrounds/bureau.jpg" id="9_44tbe"]
+[ext_resource type="Texture2D" uid="uid://byq257pplvcan" path="res://Sprites/backgrounds/bathroom.jpg" id="10_b62j2"]
 [ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
 [ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="11_33yrk"]
+[ext_resource type="Script" path="res://scenes/task_display.gd" id="14_cu32g"]
+[ext_resource type="Texture2D" uid="uid://23tna5akds1g" path="res://Sprites/items/white_square_32x32.png" id="14_xk0md"]
 [ext_resource type="Script" path="res://scenes/orange_hair.gd" id="15_mdatf"]
 [ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://Scenes/player_detector.tscn" id="16_4sr81"]
 [ext_resource type="Texture2D" uid="uid://cfkq7hi13tgb8" path="res://Sprites/characters/Angelina_Slade.png" id="16_mfdkm"]
 [ext_resource type="FontFile" uid="uid://b5kn6o17w7igv" path="res://assets/PixelGuzel.ttf" id="17_uerat"]
+[ext_resource type="Texture2D" uid="uid://l1rqyp3epav7" path="res://Sprites/backgrounds/wooden_shack.jpg" id="21_0oku6"]
+[ext_resource type="Texture2D" uid="uid://du7xwgji53ma4" path="res://Sprites/backgrounds/treatment_room.jpg" id="22_3mf1q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1kh4"]
 radius = 5.0
@@ -185,8 +191,16 @@ texture = ExtResource("7_xxk1d")
 position = Vector2(687, -430)
 texture = ExtResource("8_v020d")
 
+[node name="Bureau" type="Sprite2D" parent="gameplay/Backgrounds"]
+position = Vector2(-244, -340)
+texture = ExtResource("9_44tbe")
+
+[node name="Bathroom" type="Sprite2D" parent="gameplay/Backgrounds"]
+position = Vector2(-246, -549)
+texture = ExtResource("10_b62j2")
+
 [node name="player" type="CharacterBody2D" parent="gameplay"]
-position = Vector2(-135, -15)
+position = Vector2(-280, -300)
 script = ExtResource("2_epvge")
 
 [node name="col" type="CollisionShape2D" parent="gameplay/player"]
@@ -199,6 +213,26 @@ animation = &"idle"
 metadata/_edit_lock_ = true
 
 [node name="Camera" type="Camera2D" parent="gameplay/player"]
+
+[node name="task_display" type="Node2D" parent="gameplay/player"]
+visible = false
+script = ExtResource("14_cu32g")
+
+[node name="Sprite2D" type="Sprite2D" parent="gameplay/player/task_display"]
+position = Vector2(3.00001, 25.75)
+scale = Vector2(7.8125, 4.89063)
+texture = ExtResource("14_xk0md")
+
+[node name="Label" type="Label" parent="gameplay/player/task_display"]
+offset_left = -111.0
+offset_top = -41.0
+offset_right = 118.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_uerat")
+theme_override_font_sizes/font_size = 9
+text = "Write tasks here"
+autowrap_mode = 3
 
 [node name="Corridor1_collision" type="StaticBody2D" parent="gameplay"]
 position = Vector2(-133, 0)
@@ -553,6 +587,14 @@ text = "press space to interact"
 vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
+
+[node name="WoodenShack" type="Sprite2D" parent="."]
+position = Vector2(1322, 210)
+texture = ExtResource("21_0oku6")
+
+[node name="TreatmentRoom" type="Sprite2D" parent="."]
+position = Vector2(1015, -430)
+texture = ExtResource("22_3mf1q")
 
 [connection signal="interacted_with" from="gameplay/Characters/orange_hair/player_detector" to="gameplay/Characters/orange_hair" method="_on_player_detector_interacted_with"]
 [connection signal="player_exited" from="gameplay/Characters/orange_hair/player_detector" to="gameplay/Characters/orange_hair" method="_on_player_detector_player_exited"]
