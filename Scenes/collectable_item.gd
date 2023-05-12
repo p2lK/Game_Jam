@@ -14,6 +14,8 @@ var goal_alpha
 
 var die_on_finished = false
 
+var player_in_this = false
+
 func _process(delta):
 	if time >= 0:
 		var t = time / time_to_transition
@@ -29,6 +31,12 @@ func _process(delta):
 			
 			if die_on_finished:
 				parent.queue_free()
+	
+	if player_in_this:
+		if Input.is_action_just_released("interact"):
+			emit_signal('item_collected', parent.name)
+			set_new_alpha(0)
+			die_on_finished = true
 
 
 func set_new_alpha(new_alpha: float):
@@ -41,6 +49,9 @@ func change_alpha(t: float):
 
 func _on_area_2d_body_entered(body):
 	if body.name == 'player':
-		emit_signal('item_collected', parent.name)
-		set_new_alpha(0)
-		die_on_finished = true
+		player_in_this = true
+
+
+func _on_area_2d_body_exited(body):
+	if body.name == 'player':
+		player_in_this = false
