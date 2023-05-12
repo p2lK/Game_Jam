@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=31 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -65,7 +65,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x2f14"]
-size = Vector2(138, 37)
+size = Vector2(137, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grl1w"]
+size = Vector2(97, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpt6f"]
+size = Vector2(86, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h8jv"]
+size = Vector2(49, 13)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kogmo"]
+b = Vector2(0, 150)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1spqg"]
+b = Vector2(315, -3)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_gy7jd"]
 a = Vector2(0, -1)
@@ -118,25 +133,49 @@ position = Vector2(865, 303)
 texture = ExtResource("5_n0fax")
 
 [node name="player" type="CharacterBody2D" parent="gameplay"]
-position = Vector2(403, 3)
+position = Vector2(-2, -15)
 script = ExtResource("2_epvge")
 
 [node name="col" type="CollisionShape2D" parent="gameplay/player"]
-position = Vector2(-403, -9)
 shape = SubResource("RectangleShape2D_vixo0")
+metadata/_edit_lock_ = true
 
 [node name="midas_lennox" type="AnimatedSprite2D" parent="gameplay/player"]
-position = Vector2(-404, -16)
 sprite_frames = SubResource("SpriteFrames_15are")
 animation = &"idle"
+metadata/_edit_lock_ = true
 
 [node name="camera" type="Camera2D" parent="gameplay/player"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="gameplay"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
-position = Vector2(-142, -126.5)
+position = Vector2(-142.5, -126.5)
 shape = SubResource("RectangleShape2D_x2f14")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
+position = Vector2(-25.5, -147)
+shape = SubResource("RectangleShape2D_grl1w")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
+position = Vector2(66, -127)
+shape = SubResource("RectangleShape2D_fpt6f")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
+position = Vector2(-1.5, -115.5)
+shape = SubResource("RectangleShape2D_4h8jv")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
+position = Vector2(-210, -144)
+shape = SubResource("SegmentShape2D_kogmo")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
+position = Vector2(108, -143)
+shape = SubResource("SegmentShape2D_kogmo")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="gameplay/StaticBody2D"]
+position = Vector2(-209, 8)
+shape = SubResource("SegmentShape2D_1spqg")
 
 [node name="Corridor2_collision" type="StaticBody2D" parent="gameplay"]
 position = Vector2(403, 3)
