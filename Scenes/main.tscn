@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=49 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -133,6 +133,19 @@ b = Vector2(0, 161)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0uu8o"]
 radius = 13.0384
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gbgw"]
+size = Vector2(11.5, 21.5)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w0nt2"]
+b = Vector2(0, 91)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mvupd"]
+a = Vector2(-13, -28)
+b = Vector2(80, -28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad1b5"]
+size = Vector2(90, 15)
 
 [node name="main" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [30.0, 311.0, 75.0, -5.0]
@@ -363,6 +376,72 @@ shape = SubResource("CircleShape2D_0uu8o")
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="gameplay/Garden_collision"]
 position = Vector2(1002, 327)
 shape = SubResource("CircleShape2D_0uu8o")
+
+[node name="PatientRooms_collision" type="StaticBody2D" parent="gameplay"]
+
+[node name="bed1" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(66.5, -400.75)
+shape = SubResource("RectangleShape2D_4gbgw")
+
+[node name="bed2" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(376.75, -401)
+shape = SubResource("RectangleShape2D_4gbgw")
+
+[node name="bed3" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(652, -400)
+shape = SubResource("RectangleShape2D_4gbgw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(54, -435)
+shape = SubResource("SegmentShape2D_w0nt2")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(146, -435)
+shape = SubResource("SegmentShape2D_w0nt2")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(364, -434)
+shape = SubResource("SegmentShape2D_w0nt2")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(456, -435)
+shape = SubResource("SegmentShape2D_w0nt2")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(640, -435)
+shape = SubResource("SegmentShape2D_w0nt2")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(732, -435)
+shape = SubResource("SegmentShape2D_w0nt2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(66, -317)
+shape = SubResource("SegmentShape2D_mvupd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(376, -316)
+shape = SubResource("SegmentShape2D_mvupd")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(653, -317)
+shape = SubResource("SegmentShape2D_mvupd")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(66, -317)
+shape = SubResource("SegmentShape2D_mvupd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(100, -428.5)
+shape = SubResource("RectangleShape2D_ad1b5")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(410, -429)
+shape = SubResource("RectangleShape2D_ad1b5")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="gameplay/PatientRooms_collision"]
+position = Vector2(686, -428)
+shape = SubResource("RectangleShape2D_ad1b5")
 
 [node name="teleporters" type="Node2D" parent="gameplay"]
 
