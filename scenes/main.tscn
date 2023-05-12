@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=41 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -8,7 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
 [ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="5_n0fax"]
 [ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://Scenes/teleporter.tscn" id="5_nhd1s"]
+[ext_resource type="Texture2D" uid="uid://cg67np1obqd1a" path="res://Sprites/backgrounds/patient_room1.jpg" id="6_sey07"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
+[ext_resource type="Texture2D" uid="uid://c2e1o234gwd8e" path="res://Sprites/backgrounds/patient_room2.jpg" id="7_xxk1d"]
+[ext_resource type="Texture2D" uid="uid://bemucowm8sx8j" path="res://Sprites/backgrounds/patient_room3.jpg" id="8_v020d"]
 [ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
 [ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="11_33yrk"]
 
@@ -128,8 +131,8 @@ b = Vector2(0, 161)
 radius = 13.0384
 
 [node name="main" type="Node2D"]
-metadata/_edit_horizontal_guides_ = [30.0, 311.0, 75.0, -48.0]
-metadata/_edit_vertical_guides_ = [260.0, 547.0, 88.0, -246.0, 716.0, 865.0]
+metadata/_edit_horizontal_guides_ = [30.0, 311.0, 75.0, -5.0]
+metadata/_edit_vertical_guides_ = [264.0, 547.0, 88.0, -246.0, 716.0, 865.0]
 
 [node name="gameplay" type="Node2D" parent="."]
 script = ExtResource("1_kjmec")
@@ -151,6 +154,18 @@ texture = ExtResource("2_xkyol")
 [node name="Garden" type="Sprite2D" parent="gameplay/backgrounds"]
 position = Vector2(865, 303)
 texture = ExtResource("5_n0fax")
+
+[node name="patient_room1" type="Sprite2D" parent="gameplay/backgrounds"]
+position = Vector2(101, -430)
+texture = ExtResource("6_sey07")
+
+[node name="patient_room2" type="Sprite2D" parent="gameplay/backgrounds"]
+position = Vector2(411, -430)
+texture = ExtResource("7_xxk1d")
+
+[node name="patient_room3" type="Sprite2D" parent="gameplay/backgrounds"]
+position = Vector2(687, -430)
+texture = ExtResource("8_v020d")
 
 [node name="player" type="CharacterBody2D" parent="gameplay"]
 position = Vector2(-135, -15)
@@ -376,6 +391,36 @@ target_position = Vector2(720, 311)
 position = Vector2(707, 311.5)
 scale = Vector2(0.125, 0.40625)
 target_position = Vector2(865, 60)
+
+[node name="cor2-pt1" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(264, -23.5)
+scale = Vector2(0.5625, 0.28125)
+target_position = Vector2(100, -365)
+
+[node name="cor2-pt2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(381, -24.5)
+scale = Vector2(0.5625, 0.28125)
+target_position = Vector2(420, -365)
+
+[node name="cor2-pt3" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(498, -24.5)
+scale = Vector2(0.5625, 0.28125)
+target_position = Vector2(680, -365)
+
+[node name="pt1-cor2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(100.5, -345)
+scale = Vector2(0.90625, 0.187499)
+target_position = Vector2(265, -5)
+
+[node name="pt2-cor2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(410.5, -344.5)
+scale = Vector2(0.90625, 0.21875)
+target_position = Vector2(381, -5)
+
+[node name="pt3-cor2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(686.5, -344.5)
+scale = Vector2(0.906248, 0.21875)
+target_position = Vector2(498, -5)
 
 [node name="items" type="Node2D" parent="gameplay"]
 
