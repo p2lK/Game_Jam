@@ -55,3 +55,5 @@ sprite_frames = SubResource("SpriteFrames_j6d7k")
 animation = &"fairy"
 
 [node name="collectable_item" parent="." instance=ExtResource("6_w821s")]
+position = Vector2(0.5, 0.5)
+scale = Vector2(0.28125, 0.34375)
