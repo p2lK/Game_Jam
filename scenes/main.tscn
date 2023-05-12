@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=38 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="5_n0fax"]
 [ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://Scenes/teleporter.tscn" id="5_nhd1s"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
+[ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
+[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="11_33yrk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1kh4"]
 radius = 5.0
@@ -374,3 +376,15 @@ target_position = Vector2(720, 311)
 position = Vector2(707, 311.5)
 scale = Vector2(0.125, 0.40625)
 target_position = Vector2(865, 60)
+
+[node name="items" type="Node2D" parent="gameplay"]
+
+[node name="leg" type="Node2D" parent="gameplay/items"]
+position = Vector2(-250, -30)
+
+[node name="Sprite2D" type="Sprite2D" parent="gameplay/items/leg"]
+texture = ExtResource("10_hvk5k")
+
+[node name="collectable_item" parent="gameplay/items/leg" instance=ExtResource("11_33yrk")]
+position = Vector2(-0.5, 4.5)
+scale = Vector2(0.34375, 0.28125)
