@@ -466,6 +466,16 @@ position = Vector2(708.5, 31.5)
 scale = Vector2(0.218751, 0.96875)
 target_position = Vector2(527, 33)
 
+[node name="cor1-cor3" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(-340.5, -46.5)
+scale = Vector2(0.21875, 0.90625)
+target_position = Vector2(1000, 30)
+
+[node name="cor3-cor1" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(1022.25, 31.5)
+scale = Vector2(0.265627, 0.90625)
+target_position = Vector2(-320, -50)
+
 [node name="cor3-garden" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(864.75, 87)
 scale = Vector2(0.921875, 0.171875)
@@ -484,12 +494,12 @@ target_position = Vector2(100, -365)
 [node name="cor2-pt2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(381, -24.5)
 scale = Vector2(0.5625, 0.28125)
-target_position = Vector2(420, -365)
+target_position = Vector2(410, -365)
 
 [node name="cor2-pt3" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(498, -24.5)
 scale = Vector2(0.5625, 0.28125)
-target_position = Vector2(680, -365)
+target_position = Vector2(685, -365)
 
 [node name="pt1-cor2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(100.5, -345)
