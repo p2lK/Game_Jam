@@ -56,7 +56,7 @@ func change_text():
 	var parent = get_parent()
 	
 	if parent.talked_to_patient and parent.collected_apple:
-		text = 'Du hast alle Aufgaben für den ersten Tag erledigt, in der finalen Version würdest du jetzt zum zweiten Tag kommen. \nVielen Dank fürs Spielen!!! \nCredits: Writing: Linda \nArt: Emily, Yasemin, Nina\nCoding: Kai, Emily, Laurin'
+		text = 'Du hast alle Aufgaben für den ersten Tag erledigt, in der finalen Version würdest du jetzt zum zweiten Tag kommen. \nVielen Dank fürs Spielen!!! \n\nCredits: Writing: Linda \nArt: Emily, Yasemin, Nina\nCoding: Kai, Emily, Laurin'
 	else:
 		text += 'Erledige diese Aufgaben:\n'
 		

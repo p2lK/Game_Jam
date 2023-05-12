@@ -24,6 +24,7 @@ var collected_apple = false
 
 func _ready():
 	task_display.visible = true
+	black_screen.visible = true
 
 func lock():
 	can_move = false
@@ -97,3 +98,13 @@ func _on_player_detector_interacted_with():
 		if task_display.time == -1:
 			task_display.unhide_this()
 			task_display_active = true
+
+
+func _on_player_detector_player_entered():
+	talked_to_patient = true
+	print('sus')
+
+
+func _on_collectable_item_item_collected(item_name):
+	collected_apple = true
+	talked_to_patient = false

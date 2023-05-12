@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=84 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://Sprites/backgrounds/corridor2.png" id="2_xkyol"]
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
 [ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="5_n0fax"]
-[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
+[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://Scenes/teleporter.tscn" id="5_nhd1s"]
 [ext_resource type="Texture2D" uid="uid://cg67np1obqd1a" path="res://Sprites/backgrounds/patient_room1.jpg" id="6_sey07"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
 [ext_resource type="Texture2D" uid="uid://c2e1o234gwd8e" path="res://Sprites/backgrounds/patient_room2.jpg" id="7_xxk1d"]
@@ -15,16 +15,19 @@
 [ext_resource type="Texture2D" uid="uid://n8liwh0rk7tb" path="res://Sprites/backgrounds/bureau.jpg" id="9_44tbe"]
 [ext_resource type="Texture2D" uid="uid://byq257pplvcan" path="res://Sprites/backgrounds/bathroom.jpg" id="10_b62j2"]
 [ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
-[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://scenes/collectable_item.tscn" id="11_33yrk"]
+[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="11_33yrk"]
 [ext_resource type="Script" path="res://scenes/task_display.gd" id="14_cu32g"]
 [ext_resource type="Texture2D" uid="uid://23tna5akds1g" path="res://Sprites/items/white_square_32x32.png" id="14_xk0md"]
 [ext_resource type="Script" path="res://scenes/orange_hair.gd" id="15_mdatf"]
-[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://scenes/player_detector.tscn" id="16_4sr81"]
+[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://Scenes/player_detector.tscn" id="16_4sr81"]
 [ext_resource type="Texture2D" uid="uid://cfkq7hi13tgb8" path="res://Sprites/characters/Angelina_Slade.png" id="16_mfdkm"]
 [ext_resource type="FontFile" uid="uid://b5kn6o17w7igv" path="res://assets/PixelGuzel.ttf" id="17_uerat"]
+[ext_resource type="Texture2D" uid="uid://dbu8sopel8mnj" path="res://Sprites/items/Clipboard.png" id="18_pk5wq"]
 [ext_resource type="Texture2D" uid="uid://l1rqyp3epav7" path="res://Sprites/backgrounds/wooden_shack.jpg" id="21_0oku6"]
-[ext_resource type="PackedScene" uid="uid://d31g1mji5lba4" path="res://scenes/christian.tscn" id="21_e872j"]
+[ext_resource type="PackedScene" uid="uid://d31g1mji5lba4" path="res://Scenes/christian.tscn" id="21_e872j"]
 [ext_resource type="Texture2D" uid="uid://du7xwgji53ma4" path="res://Sprites/backgrounds/treatment_room.jpg" id="22_3mf1q"]
+[ext_resource type="Texture2D" uid="uid://ewnxxhrilyf1" path="res://Sprites/items/Apple-3.png" id="22_je1nu"]
+[ext_resource type="Texture2D" uid="uid://chj6g061abrji" path="res://Sprites/backgrounds/Cafeteria.png" id="27_j08sv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1kh4"]
 radius = 5.0
@@ -235,6 +238,14 @@ size = Vector2(50, 56)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ycumu"]
 a = Vector2(-14, -18)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sis2u"]
+a = Vector2(762, -619)
+b = Vector2(950, -619)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8xcir"]
+a = Vector2(610, -326)
+b = Vector2(610, -402)
+
 [node name="main" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [30.0, 320.0, 75.0, -10.0, -86.0, -265.0, -473.0, -360.0]
 metadata/_edit_vertical_guides_ = [264.0, 547.0, 88.0, -247.0, 746.0, 865.0, -70.0, 1014.0, 1322.0]
@@ -285,8 +296,12 @@ position = Vector2(1322, 210)
 texture = ExtResource("21_0oku6")
 
 [node name="TreatmentRoom" type="Sprite2D" parent="gameplay/Backgrounds"]
-position = Vector2(1015, -430)
+position = Vector2(1018, -433)
 texture = ExtResource("22_3mf1q")
+
+[node name="cafeteria" type="Sprite2D" parent="gameplay/Backgrounds"]
+position = Vector2(857, -629)
+texture = ExtResource("27_j08sv")
 
 [node name="player" type="CharacterBody2D" parent="gameplay"]
 z_index = 1
@@ -294,9 +309,9 @@ position = Vector2(-280, -300)
 script = ExtResource("2_epvge")
 
 [node name="black_screen" type="Sprite2D" parent="gameplay/player"]
+visible = false
 modulate = Color(0, 0, 0, 0)
 z_index = 1
-position = Vector2(165, 22)
 scale = Vector2(100, 100)
 texture = ExtResource("14_xk0md")
 
@@ -312,20 +327,19 @@ metadata/_edit_lock_ = true
 [node name="Camera" type="Camera2D" parent="gameplay/player"]
 
 [node name="task_display" type="Node2D" parent="gameplay/player"]
-visible = false
 position = Vector2(0, 160)
 script = ExtResource("14_cu32g")
 
 [node name="Sprite2D" type="Sprite2D" parent="gameplay/player/task_display"]
 position = Vector2(3.00001, 25.75)
-scale = Vector2(7.8125, 4.89063)
-texture = ExtResource("14_xk0md")
+texture = ExtResource("18_pk5wq")
 
 [node name="Label" type="Label" parent="gameplay/player/task_display"]
-offset_left = -111.0
-offset_top = -41.0
-offset_right = 118.0
-offset_bottom = 23.0
+offset_left = -39.0
+offset_top = -32.0
+offset_right = 155.0
+offset_bottom = 204.0
+scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_uerat")
 theme_override_font_sizes/font_size = 9
@@ -703,6 +717,23 @@ shape = SubResource("RectangleShape2D_b33j5")
 position = Vector2(676, 16)
 shape = SubResource("SegmentShape2D_ycumu")
 
+[node name="cafeteria" type="StaticBody2D" parent="gameplay"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/cafeteria"]
+shape = SubResource("SegmentShape2D_sis2u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/cafeteria"]
+position = Vector2(0, 76)
+shape = SubResource("SegmentShape2D_sis2u")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/cafeteria"]
+position = Vector2(153, -217)
+shape = SubResource("SegmentShape2D_8xcir")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="gameplay/cafeteria"]
+position = Vector2(339, -217)
+shape = SubResource("SegmentShape2D_8xcir")
+
 [node name="teleporters" type="Node2D" parent="gameplay"]
 
 [node name="cor1-cor2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
@@ -788,7 +819,7 @@ target_position = Vector2(-246, -86)
 [node name="bureau-cor2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(-246.313, -97)
 scale = Vector2(0.707031, 0.187499)
-target_position = Vector2(-246, 265)
+target_position = Vector2(-246, -275)
 
 [node name="cor1-bath" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(-70.8125, -97)
@@ -815,7 +846,27 @@ position = Vector2(1321, 295.438)
 scale = Vector2(0.804689, 0.277346)
 target_position = Vector2(1041, 320)
 
+[node name="cor3-cafeteria" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(861.5, -51)
+scale = Vector2(1.09375, 0.1875)
+target_position = Vector2(855, -565)
+
+[node name="cafeteria2-cor3" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(857, -543)
+scale = Vector2(0.875, 0.25)
+target_position = Vector2(860, -40)
+
 [node name="items" type="Node2D" parent="gameplay"]
+
+[node name="apple" type="Node2D" parent="gameplay/items"]
+position = Vector2(807, -578)
+
+[node name="Sprite2D" type="Sprite2D" parent="gameplay/items/apple"]
+texture = ExtResource("22_je1nu")
+
+[node name="collectable_item" parent="gameplay/items/apple" instance=ExtResource("11_33yrk")]
+position = Vector2(0.499962, -2.99999)
+scale = Vector2(0.34375, 0.375)
 
 [node name="table" type="Node2D" parent="gameplay/items"]
 
@@ -851,17 +902,20 @@ position = Vector2(127.5, -410.5)
 scale = Vector2(0.625, 0.84375)
 
 [node name="label" type="Label" parent="gameplay/Characters/orange_hair"]
-offset_left = 36.0
-offset_top = -481.0
-offset_right = 164.0
-offset_bottom = -433.0
+offset_left = 34.0
+offset_top = -509.0
+offset_right = 214.0
+offset_bottom = -439.0
 theme_override_fonts/font = ExtResource("17_uerat")
 theme_override_font_sizes/font_size = 9
-text = "press space to interact"
-vertical_alignment = 1
+text = "E zum interagieren"
+horizontal_alignment = 1
+vertical_alignment = 2
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
+[connection signal="item_collected" from="gameplay/items/apple/collectable_item" to="gameplay/player" method="_on_collectable_item_item_collected"]
 [connection signal="interacted_with" from="gameplay/items/table/player_detector" to="gameplay/player" method="_on_player_detector_interacted_with"]
 [connection signal="interacted_with" from="gameplay/Characters/orange_hair/player_detector" to="gameplay/Characters/orange_hair" method="_on_player_detector_interacted_with"]
+[connection signal="player_entered" from="gameplay/Characters/orange_hair/player_detector" to="gameplay/player" method="_on_player_detector_player_entered"]
 [connection signal="player_exited" from="gameplay/Characters/orange_hair/player_detector" to="gameplay/Characters/orange_hair" method="_on_player_detector_player_exited"]
