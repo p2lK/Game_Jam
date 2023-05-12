@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=79 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -203,9 +203,41 @@ b = Vector2(146, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yr73j"]
 size = Vector2(147, 15.5)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kib5j"]
+a = Vector2(90, -5)
+b = Vector2(90, 104)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pry6j"]
+a = Vector2(-16, -7)
+b = Vector2(78, -7)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vrowa"]
+radius = 8.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5iid5"]
+a = Vector2(24, 0)
+b = Vector2(115, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rwmgm"]
+a = Vector2(0, -82)
+b = Vector2(0, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yp503"]
+size = Vector2(24, 94)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lj3yc"]
+a = Vector2(225, 43)
+b = Vector2(239, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b33j5"]
+size = Vector2(50, 56)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ycumu"]
+a = Vector2(-14, -18)
+
 [node name="main" type="Node2D"]
-metadata/_edit_horizontal_guides_ = [30.0, 311.0, 75.0, -5.0, -86.0]
-metadata/_edit_vertical_guides_ = [264.0, 547.0, 88.0, -247.0, 716.0, 865.0, -70.0]
+metadata/_edit_horizontal_guides_ = [30.0, 320.0, 75.0, -10.0, -86.0, -265.0, -473.0, -360.0]
+metadata/_edit_vertical_guides_ = [264.0, 547.0, 88.0, -247.0, 746.0, 865.0, -70.0, 1014.0, 1322.0]
 
 [node name="gameplay" type="Node2D" parent="."]
 script = ExtResource("1_kjmec")
@@ -248,6 +280,14 @@ texture = ExtResource("9_44tbe")
 position = Vector2(-246, -549)
 texture = ExtResource("10_b62j2")
 
+[node name="WoodenShack" type="Sprite2D" parent="gameplay/Backgrounds"]
+position = Vector2(1322, 210)
+texture = ExtResource("21_0oku6")
+
+[node name="TreatmentRoom" type="Sprite2D" parent="gameplay/Backgrounds"]
+position = Vector2(1015, -430)
+texture = ExtResource("22_3mf1q")
+
 [node name="player" type="CharacterBody2D" parent="gameplay"]
 z_index = 1
 position = Vector2(-280, -300)
@@ -256,7 +296,7 @@ script = ExtResource("2_epvge")
 [node name="black_screen" type="Sprite2D" parent="gameplay/player"]
 modulate = Color(0, 0, 0, 0)
 z_index = 1
-position = Vector2(132, 0)
+position = Vector2(165, 22)
 scale = Vector2(100, 100)
 texture = ExtResource("14_xk0md")
 
@@ -604,6 +644,65 @@ shape = SubResource("SegmentShape2D_kbasx")
 position = Vector2(-245.5, -329.75)
 shape = SubResource("RectangleShape2D_yr73j")
 
+[node name="treatment_room" type="StaticBody2D" parent="gameplay"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/treatment_room"]
+position = Vector2(879, -447)
+shape = SubResource("SegmentShape2D_kib5j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/treatment_room"]
+position = Vector2(971, -447)
+shape = SubResource("SegmentShape2D_kib5j")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/treatment_room"]
+position = Vector2(984, -435)
+shape = SubResource("SegmentShape2D_pry6j")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="gameplay/treatment_room"]
+position = Vector2(984, -337)
+shape = SubResource("SegmentShape2D_pry6j")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="gameplay/treatment_room"]
+position = Vector2(1039, -421)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vrowa")
+
+[node name="wooden_shack_interior" type="StaticBody2D" parent="gameplay"]
+position = Vector2(1039, -421)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/wooden_shack_interior"]
+position = Vector2(601, -328)
+shape = SubResource("SegmentShape2D_5iid5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/wooden_shack_interior"]
+position = Vector2(602, -236)
+shape = SubResource("SegmentShape2D_5iid5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="gameplay/wooden_shack_interior"]
+position = Vector2(716, -246)
+shape = SubResource("SegmentShape2D_rwmgm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/wooden_shack_interior"]
+position = Vector2(637, -282)
+shape = SubResource("RectangleShape2D_yp503")
+
+[node name="wooden_shack" type="StaticBody2D" parent="gameplay"]
+position = Vector2(1039, -421)
+rotation = 1.5708
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gameplay/wooden_shack"]
+position = Vector2(438, -45)
+shape = SubResource("SegmentShape2D_lj3yc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/wooden_shack"]
+position = Vector2(701, -2)
+shape = SubResource("RectangleShape2D_b33j5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gameplay/wooden_shack"]
+position = Vector2(676, 16)
+shape = SubResource("SegmentShape2D_ycumu")
+
 [node name="teleporters" type="Node2D" parent="gameplay"]
 
 [node name="cor1-cor2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
@@ -679,12 +778,42 @@ target_position = Vector2(498, -5)
 [node name="bath-cor1" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(-246.375, -462)
 scale = Vector2(0.789062, 0.187499)
-target_position = Vector2(86, 70)
+target_position = Vector2(-75, -85)
 
-[node name="bath-cor2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+[node name="bureau-cor1" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(-245, -253)
 scale = Vector2(0.789062, 0.187499)
 target_position = Vector2(-246, -86)
+
+[node name="bureau-cor2" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(-246.313, -97)
+scale = Vector2(0.707031, 0.187499)
+target_position = Vector2(-246, 265)
+
+[node name="cor1-bath" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(-70.8125, -97)
+scale = Vector2(0.738281, 0.187499)
+target_position = Vector2(-247, -485)
+
+[node name="cor3-treatment" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(746, -27)
+scale = Vector2(0.5625, 0.28125)
+target_position = Vector2(1014, -370)
+
+[node name="treatment-cor3" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(1014.5, -346)
+scale = Vector2(0.718748, 0.28125)
+target_position = Vector2(746, -7)
+
+[node name="garden-shack" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(1041, 310)
+scale = Vector2(0.921875, 0.273437)
+target_position = Vector2(1322, 280)
+
+[node name="shack-garden" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
+position = Vector2(1321, 295.438)
+scale = Vector2(0.804689, 0.277346)
+target_position = Vector2(1041, 320)
 
 [node name="items" type="Node2D" parent="gameplay"]
 
@@ -732,14 +861,6 @@ text = "press space to interact"
 vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
-
-[node name="WoodenShack" type="Sprite2D" parent="."]
-position = Vector2(1322, 210)
-texture = ExtResource("21_0oku6")
-
-[node name="TreatmentRoom" type="Sprite2D" parent="."]
-position = Vector2(1015, -430)
-texture = ExtResource("22_3mf1q")
 
 [connection signal="interacted_with" from="gameplay/items/table/player_detector" to="gameplay/player" method="_on_player_detector_interacted_with"]
 [connection signal="interacted_with" from="gameplay/Characters/orange_hair/player_detector" to="gameplay/Characters/orange_hair" method="_on_player_detector_interacted_with"]
