@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbnm86nyp5yl6"
-path="res://.godot/imported/temp_map.png-64cf902a8d9941f8d78199e94c361eed.ctex"
+uid="uid://l1rqyp3epav7"
+path="res://.godot/imported/wooden_shack.jpg-21b20bb1475a5d5ec509f4a6d182addd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/temp_map.png"
-dest_files=["res://.godot/imported/temp_map.png-64cf902a8d9941f8d78199e94c361eed.ctex"]
+source_file="res://Sprites/backgrounds/wooden_shack.jpg"
+dest_files=["res://.godot/imported/wooden_shack.jpg-21b20bb1475a5d5ec509f4a6d182addd.ctex"]
 
 [params]
 

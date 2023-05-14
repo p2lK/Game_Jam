@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://d31g1mji5lba4"]
+
+[ext_resource type="Texture2D" uid="uid://bnuo4eeb78wk2" path="res://Sprites/items/Cowboy-Christian.png" id="1_o51up"]
+[ext_resource type="Texture2D" uid="uid://dt4bpamrjtfv" path="res://Sprites/items/Fairy-Christian.png" id="2_2qy48"]
+[ext_resource type="Texture2D" uid="uid://tuaexgd5ou81" path="res://Sprites/items/Mermaid-Christian.png" id="3_p6oyt"]
+[ext_resource type="Texture2D" uid="uid://bx72o1cynw0rr" path="res://Sprites/items/Original-Christian.png" id="4_ul5ag"]
+[ext_resource type="Texture2D" uid="uid://da1m0q3chdd7r" path="res://Sprites/items/Viking-Christian.png" id="5_y5vbb"]
+[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://scenes/collectable_item.tscn" id="6_w821s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j6d7k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o51up")
+}],
+"loop": true,
+"name": &"cowboy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2qy48")
+}],
+"loop": true,
+"name": &"fairy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_p6oyt")
+}],
+"loop": true,
+"name": &"mermaid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ul5ag")
+}],
+"loop": true,
+"name": &"original",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_y5vbb")
+}],
+"loop": true,
+"name": &"viking",
+"speed": 5.0
+}]
+
+[node name="christian" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_j6d7k")
+animation = &"fairy"
+
+[node name="collectable_item" parent="." instance=ExtResource("6_w821s")]
+position = Vector2(0.5, 0.5)
+scale = Vector2(0.28125, 0.34375)

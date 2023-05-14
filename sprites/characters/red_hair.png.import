@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cov88ummns52w"
-path="res://.godot/imported/red_hair.png-eae7ea2b2b94508258ac4f4b671fa4b7.ctex"
+path="res://.godot/imported/red_hair.png-a4fbee045f985b5bb0730545f5920cd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/red_hair.png"
-dest_files=["res://.godot/imported/red_hair.png-eae7ea2b2b94508258ac4f4b671fa4b7.ctex"]
+source_file="res://Sprites/characters/red_hair.png"
+dest_files=["res://.godot/imported/red_hair.png-a4fbee045f985b5bb0730545f5920cd7.ctex"]
 
 [params]
 
