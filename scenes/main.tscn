@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://m46lfebhisxf"]
+[gd_scene load_steps=94 format=3 uid="uid://m46lfebhisxf"]
 
 [ext_resource type="Texture2D" uid="uid://cqwi5lj6utbvl" path="res://Sprites/backgrounds/corridor1.png" id="1_8sc0c"]
 [ext_resource type="Script" path="res://scenes/gameplay.gd" id="1_kjmec"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://8epa4fkwpnog" path="res://Sprites/backgrounds/corridor2.png" id="2_xkyol"]
 [ext_resource type="Texture2D" uid="uid://4ga8d8olagui" path="res://Sprites/characters/Midas_Lennox_walking.png" id="3_amvyg"]
 [ext_resource type="Texture2D" uid="uid://hg6rttwnmg83" path="res://Sprites/backgrounds/garden.png" id="5_n0fax"]
-[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://scenes/teleporter.tscn" id="5_nhd1s"]
+[ext_resource type="PackedScene" uid="uid://db7p8n0ts55xo" path="res://Scenes/teleporter.tscn" id="5_nhd1s"]
 [ext_resource type="Texture2D" uid="uid://cg67np1obqd1a" path="res://Sprites/backgrounds/patient_room1.jpg" id="6_sey07"]
 [ext_resource type="Texture2D" uid="uid://pltrmj6ulwt" path="res://Sprites/characters/Midas_Lennox.png" id="7_a4vo6"]
 [ext_resource type="Texture2D" uid="uid://c2e1o234gwd8e" path="res://Sprites/backgrounds/patient_room2.jpg" id="7_xxk1d"]
@@ -15,19 +15,29 @@
 [ext_resource type="Texture2D" uid="uid://n8liwh0rk7tb" path="res://Sprites/backgrounds/bureau.jpg" id="9_44tbe"]
 [ext_resource type="Texture2D" uid="uid://byq257pplvcan" path="res://Sprites/backgrounds/bathroom.jpg" id="10_b62j2"]
 [ext_resource type="Texture2D" uid="uid://nh1myjekjij4" path="res://Sprites/deco/leg.png" id="10_hvk5k"]
-[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://scenes/collectable_item.tscn" id="11_33yrk"]
+[ext_resource type="PackedScene" uid="uid://1swkh0rxdwxv" path="res://Scenes/collectable_item.tscn" id="11_33yrk"]
 [ext_resource type="Script" path="res://scenes/task_display.gd" id="14_cu32g"]
 [ext_resource type="Texture2D" uid="uid://23tna5akds1g" path="res://Sprites/items/white_square_32x32.png" id="14_xk0md"]
 [ext_resource type="Script" path="res://scenes/orange_hair.gd" id="15_mdatf"]
-[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://scenes/player_detector.tscn" id="16_4sr81"]
+[ext_resource type="PackedScene" uid="uid://bds28y3x3ihwl" path="res://Scenes/player_detector.tscn" id="16_4sr81"]
 [ext_resource type="Texture2D" uid="uid://cfkq7hi13tgb8" path="res://Sprites/characters/Angelina_Slade.png" id="16_mfdkm"]
 [ext_resource type="FontFile" uid="uid://b5kn6o17w7igv" path="res://assets/PixelGuzel.ttf" id="17_uerat"]
 [ext_resource type="Texture2D" uid="uid://dbu8sopel8mnj" path="res://Sprites/items/Clipboard.png" id="18_pk5wq"]
 [ext_resource type="Texture2D" uid="uid://l1rqyp3epav7" path="res://Sprites/backgrounds/wooden_shack.jpg" id="21_0oku6"]
-[ext_resource type="PackedScene" uid="uid://d31g1mji5lba4" path="res://scenes/christian.tscn" id="21_e872j"]
+[ext_resource type="PackedScene" uid="uid://d31g1mji5lba4" path="res://Scenes/christian.tscn" id="21_e872j"]
 [ext_resource type="Texture2D" uid="uid://du7xwgji53ma4" path="res://Sprites/backgrounds/treatment_room.jpg" id="22_3mf1q"]
 [ext_resource type="Texture2D" uid="uid://ewnxxhrilyf1" path="res://Sprites/items/Apple-3.png" id="22_je1nu"]
+[ext_resource type="Texture2D" uid="uid://bn1c43kl3y4c1" path="res://Sprites/deco/guts1.png" id="27_arl26"]
 [ext_resource type="Texture2D" uid="uid://chj6g061abrji" path="res://Sprites/backgrounds/Cafeteria.png" id="27_j08sv"]
+[ext_resource type="Texture2D" uid="uid://dguueyvvmtj20" path="res://Sprites/deco/bird1.png" id="28_yn6m0"]
+[ext_resource type="Texture2D" uid="uid://bdwvwfs4h6vi7" path="res://Sprites/deco/bird2.png" id="29_yoxmo"]
+[ext_resource type="Texture2D" uid="uid://bqdqg0naspnx2" path="res://Sprites/deco/cat1.png" id="30_voyde"]
+[ext_resource type="Texture2D" uid="uid://dh3ear7wtkhf" path="res://Sprites/deco/cat2.png" id="31_d18cm"]
+[ext_resource type="Texture2D" uid="uid://drvw4r08wxngy" path="res://Sprites/characters/blond_hair.png" id="34_lbskm"]
+[ext_resource type="Texture2D" uid="uid://dry6ga3ihgarv" path="res://Sprites/characters/purple_hair.png" id="35_2yocx"]
+[ext_resource type="Texture2D" uid="uid://b5nugha74s6ok" path="res://Sprites/characters/blue_hair_dead.png" id="36_ra7v8"]
+[ext_resource type="Texture2D" uid="uid://by8lo0dwxh5f2" path="res://Sprites/characters/silver_hair.png" id="37_bgl52"]
+[ext_resource type="Texture2D" uid="uid://cov88ummns52w" path="res://Sprites/characters/red_hair.png" id="38_aqkjg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1kh4"]
 radius = 5.0
@@ -839,7 +849,7 @@ target_position = Vector2(746, -7)
 [node name="garden-shack" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(1041, 310)
 scale = Vector2(0.921875, 0.273437)
-target_position = Vector2(1322, 280)
+target_position = Vector2(1322, 270)
 
 [node name="shack-garden" parent="gameplay/teleporters" instance=ExtResource("5_nhd1s")]
 position = Vector2(1321, 295.438)
@@ -875,7 +885,7 @@ position = Vector2(-286.5, -312)
 scale = Vector2(0.906251, 0.625)
 
 [node name="leg" type="Node2D" parent="gameplay/items"]
-position = Vector2(-250, -30)
+position = Vector2(439, -381)
 
 [node name="Sprite2D" type="Sprite2D" parent="gameplay/items/leg"]
 texture = ExtResource("10_hvk5k")
@@ -900,8 +910,49 @@ position = Vector2(-233, -528)
 animation = &"mermaid"
 
 [node name="christian5" parent="gameplay/items" instance=ExtResource("21_e872j")]
-position = Vector2(823, 357)
+position = Vector2(1022, 440)
 animation = &"original"
+
+[node name="guts" type="Sprite2D" parent="gameplay/items"]
+position = Vector2(674, -380)
+texture = ExtResource("27_arl26")
+
+[node name="bird" type="Sprite2D" parent="gameplay/items"]
+position = Vector2(931, 310)
+texture = ExtResource("28_yn6m0")
+
+[node name="bird2" type="Sprite2D" parent="gameplay/items"]
+position = Vector2(680, 429)
+texture = ExtResource("28_yn6m0")
+flip_h = true
+
+[node name="bird3" type="Sprite2D" parent="gameplay/items"]
+position = Vector2(718, 262)
+texture = ExtResource("29_yoxmo")
+flip_h = true
+
+[node name="bird4" type="Sprite2D" parent="gameplay/items"]
+position = Vector2(877, 249)
+texture = ExtResource("28_yn6m0")
+flip_h = true
+
+[node name="bird5" type="Sprite2D" parent="gameplay/items"]
+position = Vector2(747, 439)
+texture = ExtResource("28_yn6m0")
+
+[node name="bird6" type="Sprite2D" parent="gameplay/items"]
+position = Vector2(909, 413)
+texture = ExtResource("28_yn6m0")
+flip_h = true
+
+[node name="cat" type="Sprite2D" parent="gameplay/items"]
+position = Vector2(1074, 424)
+texture = ExtResource("30_voyde")
+
+[node name="cat2" type="Sprite2D" parent="gameplay/items"]
+position = Vector2(378, -373)
+texture = ExtResource("31_d18cm")
+flip_h = true
 
 [node name="Characters" type="Node2D" parent="gameplay"]
 
@@ -929,6 +980,27 @@ horizontal_alignment = 1
 vertical_alignment = 2
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
+
+[node name="angelina" type="Sprite2D" parent="gameplay/Characters"]
+position = Vector2(938, 251)
+texture = ExtResource("34_lbskm")
+
+[node name="angelina2" type="Sprite2D" parent="gameplay/Characters"]
+position = Vector2(997, -390)
+texture = ExtResource("35_2yocx")
+
+[node name="BlueHairDead" type="Sprite2D" parent="gameplay/Characters"]
+position = Vector2(703, -375)
+texture = ExtResource("36_ra7v8")
+
+[node name="SilverHair" type="Sprite2D" parent="gameplay/Characters"]
+position = Vector2(-276, -494)
+texture = ExtResource("37_bgl52")
+
+[node name="RedHair" type="Sprite2D" parent="gameplay/Characters"]
+position = Vector2(1290, 253)
+texture = ExtResource("38_aqkjg")
+flip_h = true
 
 [connection signal="item_collected" from="gameplay/items/apple/collectable_item" to="gameplay/player" method="_on_collectable_item_item_collected"]
 [connection signal="interacted_with" from="gameplay/items/table/player_detector" to="gameplay/player" method="_on_player_detector_interacted_with"]

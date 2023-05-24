@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbnm86nyp5yl6"
-path="res://.godot/imported/temp_map.png-d10d6efa3b0979e7e440f7e8485be2b0.ctex"
+uid="uid://dgf3kttv3vqlm"
+path="res://.godot/imported/Corridor3.jpg-a87cb1f54d22b3451a2b98a6dbe4f370.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/temp_map.png"
-dest_files=["res://.godot/imported/temp_map.png-d10d6efa3b0979e7e440f7e8485be2b0.ctex"]
+source_file="res://Sprites/backgrounds/Corridor3.jpg"
+dest_files=["res://.godot/imported/Corridor3.jpg-a87cb1f54d22b3451a2b98a6dbe4f370.ctex"]
 
 [params]
 
